@@ -1,12 +1,11 @@
 from scapy.all import ARP, Ether, srp
-import datetime
 import socket
 import ipaddress
 import argparse
 
 def network_enum():
     devices = []
-    for host in range(10):
+    for host in range(5):
         address = "192.168.56." + str(host)
         socket.setdefaulttimeout(0.5)
 
@@ -37,19 +36,4 @@ def scan(ip, netmask):
     # Scanning network and creating list with results
     devices = network_enum()
 
-    # Create HTML report
-    now = datetime.datetime.now()
-    report_file = 'network_scan_report_' + now.strftime("%Y-%m-%d_%H-%M-%S") + '.html'
-
-    with open(report_file, 'w') as f:
-        f.write('<html><body><h1>Network Scan Report</h1>\n')
-        f.write('<p>Scan started at ' + now.strftime("%Y-%m-%d %H:%M:%S") + '</p>\n')
-        f.write('<table>\n')
-        f.write('<tr><th>IP Address</th><th>Alias</th><th>Hostname</th></tr>\n')
-        
-        for device in devices:
-            f.write('<tr><td>' + str(device[2]) + '</td><td>' + str(device[1]) + '</td><td>' + str(device[0]) + '</td></tr>\n')
-        
-        f.write('</table></body></html>')
-
-    print('Scan complete. Report saved to ' + report_file)
+    return devices

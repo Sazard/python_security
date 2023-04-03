@@ -2,6 +2,13 @@ from scapy.all import ARP, Ether, srp
 import socket
 import ipaddress
 import argparse
+import subprocess
+
+def is_alive(ip):
+    # Use ping to check if IP is alive
+    command = ['ping', '-c', '1', '-W', '0.400', ip]
+    print("testing: ", ip)
+    return subprocess.call(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
 def network_enum(ip, netmask):
     devices = []
@@ -9,7 +16,8 @@ def network_enum(ip, netmask):
     try:
         subnet_mask = int(netmask)
         if subnet_mask < 0 or subnet_mask > 32:
-            raise argparse.ArgumentTypeError('Subnet mask must be between 0 and 32')
+            raise argparse.ArgumentTypeError(
+                'Subnet mask must be between 0 and 32')
     except ValueError:
         raise argparse.ArgumentTypeError('Subnet mask must be an integer')
 
@@ -20,15 +28,16 @@ def network_enum(ip, netmask):
         address = str(host)
         socket.setdefaulttimeout(0.5)
 
-        try:
-            hostname, alias, addresslist = socket.gethostbyaddr(address)
-            devices.append((hostname, alias, addresslist))
-        except socket.herror:
-            hostname = None
-            alias = None
-            addresslist = address
+        if is_alive(address):
+            try:
+                hostname, alias, addresslist = socket.gethostbyaddr(address)
+            except socket.herror:
+                hostname = 'Host-' + address
+                alias = 'Alias-' + address
+                addresslist = address
 
-        print(addresslist, '=>', hostname)
+            devices.append((hostname, alias, addresslist))
+
     return devices
 
 
@@ -48,4 +57,9 @@ def scan(ip, netmask):
     # Scanning network and creating list with results
     devices = network_enum(ip, netmask)
 
+    return devices
+
+def scan_single_ip(ip):
+    # Scanning network and creating list with results
+    devices = network_enum(ip, '32')
     return devices

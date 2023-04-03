@@ -5,7 +5,8 @@ import datetime
 def scan(devices):
     scan_result = {}
     for device in devices:
-        ip = device[2][0]
+        ip = device[2]
+        print("scanning IP: ", ip)
         # First one for hostname
         open_port = [device[0]]
         print ('Starting scan on host: ', ip)

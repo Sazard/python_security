@@ -11,19 +11,32 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Basic network scanner')
     parser.add_argument('--ip', metavar='ip', type=str, default='192.168.56.1', help='Host IP address')
     parser.add_argument('--netmask', metavar='netmask', type=str, default='24', help='Subnet mask')
+    parser.add_argument('--single-ip', metavar='single_ip', type=str, help='Single IP address to scan')
     args = parser.parse_args()
-    print("Ip :",args.ip, "| netmask :", args.netmask)
 
-    devices = network_scanner.scan(args.ip, args.netmask)
-    
-    # For debug
-    #devices = [('DESKTOP-IJ3JO0K', [], ['192.168.56.1'])]
-    #print(devices)
-    
-    scan_result = device_scanner.scan(devices)
-    
-    # For debug
-    #scan_result = {'192.168.56.1': ['DESKTOP-IJ3JO0K', 135, 139]}
-    #print(scan_result)
-    
-    device_scanner.create_report(scan_result)
+    if args.single_ip:
+
+        print("IP:",args.single_ip, "| netmask: 32")
+
+        # Scan single IP address
+        device_info = network_scanner.scan_single_ip(args.single_ip)
+        print(device_info)
+        scan_result = device_scanner.scan(device_info)
+        device_scanner.create_report(scan_result)
+
+    else:
+
+        print("Ip :",args.ip, "| netmask :", args.netmask)
+
+        # For debug
+        #devices = [('DESKTOP-IJ3JO0K', [], ['192.168.56.1'])]
+        #print(devices)
+
+        devices = network_scanner.scan(args.ip, args.netmask)
+
+        # For debug
+        #scan_result = {'192.168.56.1': ['DESKTOP-IJ3JO0K', 135, 139]}
+        #print(scan_result)
+
+        scan_result = device_scanner.scan(devices)
+        device_scanner.create_report(scan_result)

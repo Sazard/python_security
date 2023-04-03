@@ -20,13 +20,12 @@ if __name__ == '__main__':
 
         # Scan single IP address
         device_info = network_scanner.scan_single_ip(args.single_ip)
-        print(device_info)
         scan_result = device_scanner.scan(device_info)
         device_scanner.create_report(scan_result)
 
     else:
 
-        print("Ip :",args.ip, "| netmask :", args.netmask)
+        print("IP:",args.ip, "| netmask:", args.netmask)
 
         # For debug
         #devices = [('DESKTOP-IJ3JO0K', [], ['192.168.56.1'])]

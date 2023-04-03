@@ -6,8 +6,8 @@ import subprocess
 
 def is_alive(ip):
     # Use ping to check if IP is alive
-    command = ['ping', '-c', '1', '-W', '0.400', ip]
-    print("testing alive: ", ip)
+    command = ['ping', '-c', '1', '-W', '0.5', ip]
+    # print("testing alive: ", ip)
     return subprocess.call(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
 def network_enum(ip, netmask):
@@ -30,13 +30,15 @@ def network_enum(ip, netmask):
 
         
         try:
-            print("testing: ", host)
+            # print("testing: ", host)
             hostname, alias, addresslist = socket.gethostbyaddr(address)
-            devices.append((hostname, alias, addresslist))
+            print("Is alive: ", host)
+            devices.append((hostname, alias, addresslist[0]))
         except socket.herror:
             if is_alive(address):
-                hostname = 'Host-' + address
-                alias = 'Alias-' + address
+                print("Is alive: ", host)
+                hostname = None
+                alias = None
                 addresslist = address
                 devices.append((hostname, alias, addresslist))
 

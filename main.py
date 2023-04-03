@@ -3,8 +3,8 @@ import sys
 
 sys.path.insert(1, 'tools')
 
-import network_scanner
-import device_scanner
+from tools import network_scanner
+from tools import device_scanner
 
 if __name__ == '__main__':
     # Parse command-line arguments

@@ -9,9 +9,10 @@ from tools import device_scanner
 if __name__ == '__main__':
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description='Basic network scanner')
-    parser.add_argument('--ip', metavar='ip', type=str, default='192.168.56.1', help='Host IP address')
-    parser.add_argument('--netmask', metavar='netmask', type=str, default='24', help='Subnet mask')
-    parser.add_argument('--single-ip', metavar='single_ip', type=str, help='Single IP address to scan')
+    parser.add_argument('-i', '--ip', metavar='ip', type=str, default='192.168.56.1', help='Host IP address')
+    parser.add_argument('-n', '--netmask', metavar='netmask', type=str, default='24', help='Subnet mask')
+    parser.add_argument('-1', '--single-ip', metavar='single_ip', type=str, help='Single IP address to scan')
+    parser.add_argument('-f', '--output-format', metavar='output_format', type=str, choices=['json', 'csv', 'html'], default='html', help='Output format')
     args = parser.parse_args()
 
     if args.single_ip:
@@ -21,7 +22,7 @@ if __name__ == '__main__':
         # Scan single IP address
         device_info = network_scanner.scan_single_ip(args.single_ip)
         scan_result = device_scanner.scan(device_info)
-        device_scanner.create_report(scan_result)
+        device_scanner.create_report(scan_result, args.output_format)
 
     else:
 
@@ -38,4 +39,4 @@ if __name__ == '__main__':
         #print(scan_result)
 
         scan_result = device_scanner.scan(devices)
-        device_scanner.create_report(scan_result)
+        device_scanner.create_report(scan_result, args.output_format)

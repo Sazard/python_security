@@ -30,7 +30,7 @@ def network_enum(ip, netmask):
 
         
         try:
-            print("testing: ", ip)
+            print("testing: ", host)
             hostname, alias, addresslist = socket.gethostbyaddr(address)
             devices.append((hostname, alias, addresslist))
         except socket.herror:

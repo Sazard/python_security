@@ -28,15 +28,16 @@ def network_enum(ip, netmask):
         address = str(host)
         socket.setdefaulttimeout(0.5)
 
-        if is_alive(address):
-            try:
-                hostname, alias, addresslist = socket.gethostbyaddr(address)
-            except socket.herror:
+        
+        try:
+            hostname, alias, addresslist = socket.gethostbyaddr(address)
+            devices.append((hostname, alias, addresslist))
+        except socket.herror:
+            if is_alive(address):
                 hostname = 'Host-' + address
                 alias = 'Alias-' + address
                 addresslist = address
-
-            devices.append((hostname, alias, addresslist))
+                devices.append((hostname, alias, addresslist))
 
     return devices
 

@@ -25,7 +25,6 @@ def scan(devices):
                 print('Port %d: OPEN' % (i,))
             s.close()
         scan_result[ip] = device_info
-        print(scan_result)
     return scan_result
 
 # Create HTML report

@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:stable
 
 WORKDIR /opt/python-securite
 
@@ -9,4 +9,5 @@ RUN \
 
 USER root
 
-CMD ["python3","src/main.py","-1", "192.168.1.199"]
+#CMD ["python3","src/main.py","-1", "192.168.1.199"]
+CMD ["python3","src/main.py","-a", "test"]

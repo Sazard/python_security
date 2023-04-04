@@ -18,7 +18,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.analyse:
-        results = network_interceptor.sniffing_network()
+        results = network_interceptor.sniffing_network("")
     elif args.single_ip:
 
         print("IP:",args.single_ip, "| netmask: 32")

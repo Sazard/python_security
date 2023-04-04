@@ -5,6 +5,7 @@ sys.path.insert(1, 'tools')
 
 from tools import network_scanner
 from tools import device_scanner
+from tools import network_interceptor
 
 if __name__ == '__main__':
     # Parse command-line arguments
@@ -13,9 +14,12 @@ if __name__ == '__main__':
     parser.add_argument('-n', '--netmask', metavar='netmask', type=str, default='24', help='Subnet mask')
     parser.add_argument('-1', '--single-ip', metavar='single_ip', type=str, help='Single IP address to scan')
     parser.add_argument('-f', '--output-format', metavar='output_format', type=str, choices=['json', 'csv', 'html'], default='html', help='Output format')
+    parser.add_argument('-a', '--analyse', metavar='analyse', type=str, help='Analyse network traffic')
     args = parser.parse_args()
 
-    if args.single_ip:
+    if args.analyse:
+        results = network_interceptor.sniffing_network()
+    elif args.single_ip:
 
         print("IP:",args.single_ip, "| netmask: 32")
 

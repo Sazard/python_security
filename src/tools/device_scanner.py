@@ -1,8 +1,16 @@
 from socket import *
 import datetime
+from concurrent.futures import ThreadPoolExecutor
 
 # Scan for open port
+all_opened_port = []
 
+def TestPort(ip, port):
+    s = socket(AF_INET, SOCK_STREAM)
+    conn = s.connect_ex((ip, port))
+    if (conn == 0):
+        all_opened_port.append(port)
+    s.close()
 
 def scan(devices):
     # devices = [(None,"192.168.1.152","192.168.1.152"),("test2","192.168.1.199","192.168.1.199"),("test3","192.168.1.245","192.168.1.254")]
@@ -15,16 +23,14 @@ def scan(devices):
         device_info = [hostname, alias]
         print('Starting scan on host: ', ip)
 
-        # Original 50-500
-        for i in [20, 21, 22, 53, 80, 135, 139, 443, 445, 554, 2020, 5000, 5357, 5678, 8090, 9091]:
-            s = socket(AF_INET, SOCK_STREAM)
-
-            conn = s.connect_ex((ip, i))
-            if (conn == 0):
-                device_info.append(i)
-                print('Port %d: OPEN' % (i,))
-            s.close()
-        scan_result[ip] = device_info
+        all_opened_port = []
+        with ThreadPoolExecutor(max_workers=16) as executor:
+            for port in range(0,4096):                 
+                executor.submit(TestPort(ip, port))
+        
+        executor.shutdown(wait=True, cancel_futures=False)
+        print(all_opened_port)               
+        scan_result[ip] = all_opened_port
     return scan_result
 
 # Create HTML report
@@ -46,11 +52,7 @@ def create_report(scan_result, output_format):
                 margin-left: 20px;
             }
 
-            table {
-                border-collapse: collapse;
-                margin: 20px 0;
-            }
-
+            table {str(device_info[0])
             th,
             td {
                 border: 1px solid #333;

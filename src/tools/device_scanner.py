@@ -29,8 +29,9 @@ def scan(devices):
                 executor.submit(TestPort(ip, port))
         
         executor.shutdown(wait=True, cancel_futures=False)
-        print(all_opened_port)               
-        scan_result[ip] = all_opened_port
+        for i in all_opened_port:
+            device_info.append(i)             
+        scan_result[ip] = device_info
     return scan_result
 
 # Create HTML report

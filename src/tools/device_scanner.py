@@ -18,10 +18,8 @@ def TestPort(port):
     s = socket(AF_INET, SOCK_STREAM)
     #ping
     conn = s.connect_ex((current_ip, port))
-    #port open ?
-    service = printServiceOnPort(port,  "tcp")
     if (conn == 0):
-        all_opened_port.append((port, service))
+        all_opened_port.append(port)
         print("Port " + current_ip + ":" +  port + "  is Open")
     s.close()
 

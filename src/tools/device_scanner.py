@@ -1,18 +1,27 @@
 from socket import *
 import datetime
 from concurrent.futures import ThreadPoolExecutor
+import threading
+import ThreadSafeList
 
 # Scan for open port
-all_opened_port = []
+all_opened_port = None
+number_of_thread = 32
+current_ip = ""
 
-def TestPort(ip, port):
+def TestPort(port):
+    global all_opened_port
+    global current_ip
     s = socket(AF_INET, SOCK_STREAM)
-    conn = s.connect_ex((ip, port))
+    conn = s.connect_ex((current_ip, port))
     if (conn == 0):
         all_opened_port.append(port)
+        print("Port " + current_ip + ":" +  port + "  is Open")
     s.close()
 
 def scan(devices):
+    global all_opened_port
+    global current_ip
     # devices = [(None,"192.168.1.152","192.168.1.152"),("test2","192.168.1.199","192.168.1.199"),("test3","192.168.1.245","192.168.1.254")]
     scan_result = {}
     for device in devices:
@@ -22,14 +31,15 @@ def scan(devices):
 
         device_info = [hostname, alias]
         print('Starting scan on host: ', ip)
-
-        all_opened_port = []
-        with ThreadPoolExecutor(max_workers=16) as executor:
-            for port in range(0,4096):                 
-                executor.submit(TestPort(ip, port))
+        all_opened_port = ThreadSafeList.ThreadSafeList()
+        current_ip = ip
+        port_to_test = list(range(0,4096))
+        with ThreadPoolExecutor(max_workers=number_of_thread) as executor:               
+            executor.map(TestPort, port_to_test)
         
         executor.shutdown(wait=True, cancel_futures=False)
-        for i in all_opened_port:
+        print(all_opened_port)
+        for i in all_opened_port.iterator():
             device_info.append(i)             
         scan_result[ip] = device_info
     return scan_result

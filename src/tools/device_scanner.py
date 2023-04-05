@@ -2,7 +2,8 @@ from socket import *
 import datetime
 from concurrent.futures import ThreadPoolExecutor
 import threading
-import ThreadSafeList
+from tools import ThreadSafeList
+from tools import devices_info
 
 # Scan for open port
 all_opened_port = None
@@ -10,10 +11,14 @@ number_of_thread = 32
 current_ip = ""
 
 def TestPort(port):
+    #recover global variable  between thread
     global all_opened_port
     global current_ip
+    #socket creation
     s = socket(AF_INET, SOCK_STREAM)
+    #ping
     conn = s.connect_ex((current_ip, port))
+    #port open ?
     protocole = socket.getservbyport(port)
     if (conn == 0):
         all_opened_port.append(port)
@@ -21,34 +26,38 @@ def TestPort(port):
         print("Port " + current_ip + ":" +  port + "  is Open with potocol :" + protocole)
     s.close()
 
-def scan(devices):
+def scan():
     global all_opened_port
     global current_ip
     # devices = [(None,"192.168.1.152","192.168.1.152"),("test2","192.168.1.199","192.168.1.199"),("test3","192.168.1.245","192.168.1.254")]
     scan_result = {}
-    for device in devices:
-        hostname = device[0]
-        alias = device[1]
-        ip = device[2]
+    for device in devices_info.all_devices:
+        hostname = device.hostname
+        alias = device.alias
+        ip = device.ip
 
-        device_info = [hostname, alias]
+
         print('Starting scan on host: ', ip)
+        #reset oppened port between ip
         all_opened_port = ThreadSafeList.ThreadSafeList()
         current_ip = ip
+
+        #create a list of port to create
         port_to_test = list(range(0,4096))
+        
+        #threadpool to ping all port in the port_to_test list
         with ThreadPoolExecutor(max_workers=number_of_thread) as executor:               
             executor.map(TestPort, port_to_test)
         
+        #wait for all thread to finish
         executor.shutdown(wait=True, cancel_futures=False)
-        print(all_opened_port)
-        for i in all_opened_port.iterator():
-            device_info.append(i)             
-        scan_result[ip] = device_info
+         
+        devices_info.Device_info.GetDevice(ip).port = all_opened_port.iterator()
     return scan_result
 
 # Create HTML report
 
-def create_report(scan_result, output_format):
+def create_report(output_format):
     now = datetime.datetime.now()
     report_file = 'network_scan_report_' + \
         now.strftime("%Y-%m-%d_%H-%M-%S") + '.' + output_format
@@ -90,12 +99,12 @@ def create_report(scan_result, output_format):
         f.write(
             '<tr><th>IP Address</th><th>Hostname</th><th>Alias</th><th>Open Ports</th></tr>\n')
 
-        for ip, device_info in scan_result.items():
+        for device in devices_info.all_devices:
 
-            ip = str(ip)
-            hostname = str(device_info[0])
-            alias = str(device_info[1])
-            open_ports = str(device_info[2::])
+            ip = str(device.ip)
+            hostname = str(device.hostname)
+            alias = str(device.alias)
+            open_ports = str(device.port)
 
             f.write('<tr><td>' + ip + '</td><td>' + hostname + '</td><td>' +
                     alias + '</td><td>' + open_ports + '</td></tr>\n')

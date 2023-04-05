@@ -3,6 +3,7 @@ import socket
 import ipaddress
 import argparse
 import subprocess
+from tools import devices_info
 
 def is_alive(ip):
     # Use ping to check if IP is alive
@@ -11,7 +12,6 @@ def is_alive(ip):
     return subprocess.call(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
 def network_enum(ip, netmask):
-    devices = []
     # Check if subnet mask is valid
     try:
         subnet_mask = int(netmask)
@@ -33,16 +33,15 @@ def network_enum(ip, netmask):
             # print("testing: ", host)
             hostname, alias, addresslist = socket.gethostbyaddr(address)
             print("Is alive: ", host)
-            devices.append((hostname, alias, addresslist[0]))
+            devices_info.Device_info.AddDevice(addresslist[0],alias,hostname[0])
         except socket.herror:
             if is_alive(address):
                 print("Is alive: ", host)
                 hostname = None
                 alias = None
                 addresslist = address
-                devices.append((hostname, alias, addresslist))
+                devices_info.Device_info.AddDevice(addresslist,alias,hostname)
 
-    return devices
 
 
 def scan(ip, netmask):
@@ -59,11 +58,8 @@ def scan(ip, netmask):
     target_ip = str(host_network.network_address) + '/' + str(host_network.prefixlen)
 
     # Scanning network and creating list with results
-    devices = network_enum(ip, netmask)
-
-    return devices
+    network_enum(ip, netmask)
 
 def scan_single_ip(ip):
     # Scanning network and creating list with results
-    devices = network_enum(ip, '32')
-    return devices
+   network_enum(ip, '32')

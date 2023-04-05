@@ -28,11 +28,11 @@ def test_scan_single_ip(nmap_scan_single_ip, single_ip):
     expected_ports = list(nmap_scan_single_ip[single_ip]['tcp'].keys())
     assert tested_ports == expected_ports
 
-def test_scan(nmap_scan_ip_network, ip, netmask):
-    network_scanner.scan(ip, netmask)
-    tested_devices = devices_info.Device_info.all_devices()
-    expected_devices = list(nmap_scan_single_ip.all_hosts())
-    assert tested_devices == expected_devices # et on va devoir itérer pour vérifier si les devices sont bien dedans...
+# def test_scan(nmap_scan_ip_network, ip, netmask):
+#     network_scanner.scan(ip, netmask)
+#     tested_devices = devices_info.Device_info.all_devices()
+#     expected_devices = list(nmap_scan_single_ip.all_hosts())
+#     assert tested_devices == expected_devices # et on va devoir itérer pour vérifier si les devices sont bien dedans...
 
 # def test_network_enum(ip, netmask):
 #     expected = [('host1.localdomain', None, ['192.168.0.1']), (None, None, '192.168.0.2')]

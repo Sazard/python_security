@@ -19,11 +19,10 @@ def TestPort(port):
     #ping
     conn = s.connect_ex((current_ip, port))
     #port open ?
-    protocole = socket.getservbyport(port)
+    service = printServiceOnPort(port,  "tcp")
     if (conn == 0):
-        all_opened_port.append(port)
-        print(printServiceOnPort(port,  "tcp"))
-        print("Port " + current_ip + ":" +  port + "  is Open with potocol :" + protocole)
+        all_opened_port.append((port, service))
+        print("Port " + current_ip + ":" +  port + "  is Open")
     s.close()
 
 def scan():

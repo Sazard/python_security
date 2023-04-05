@@ -4,7 +4,7 @@ WORKDIR /opt/python-securite
 
 RUN \
   apt-get update && \
-  apt-get -y install python3 python3-pip iputils-ping && \
+  apt-get -y install python3 python3-pip iputils-ping nmap && \
   pip3 install scapy pytest python-nmap
 
 USER root

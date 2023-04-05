@@ -14,9 +14,11 @@ def TestPort(port):
     global current_ip
     s = socket(AF_INET, SOCK_STREAM)
     conn = s.connect_ex((current_ip, port))
+    protocole = socket.getservbyport(port)
     if (conn == 0):
         all_opened_port.append(port)
-        print("Port " + current_ip + ":" +  port + "  is Open")
+        print(printServiceOnPort(port,  "tcp"))
+        print("Port " + current_ip + ":" +  port + "  is Open with potocol :" + protocole)
     s.close()
 
 def scan(devices):

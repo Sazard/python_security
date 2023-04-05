@@ -6,6 +6,7 @@ sys.path.insert(1, 'tools')
 from tools import network_scanner
 from tools import device_scanner
 from tools import network_interceptor
+from tools import devices_info
 
 if __name__ == '__main__':
     # Parse command-line arguments
@@ -18,15 +19,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.analyse:
-        results = network_interceptor.sniffing_network("")
+        results = network_interceptor.sniffing_network(str(args.ip) + '/' + str(args.netmask))
     elif args.single_ip:
 
         print("IP:",args.single_ip, "| netmask: 32")
 
         # Scan single IP address
-        device_info = network_scanner.scan_single_ip(args.single_ip)
-        scan_result = device_scanner.scan(device_info)
-        device_scanner.create_report(scan_result, args.output_format)
+        network_scanner.scan_single_ip(args.single_ip)
+        device_scanner.scan()
+        device_scanner.create_report(args.output_format)
 
     else:
 
@@ -36,11 +37,11 @@ if __name__ == '__main__':
         #devices = [('DESKTOP-IJ3JO0K', [], ['192.168.56.1'])]
         #print(devices)
 
-        devices = network_scanner.scan(args.ip, args.netmask)
+        network_scanner.scan(args.ip, args.netmask)
 
         # For debug
         #scan_result = {'192.168.56.1': ['DESKTOP-IJ3JO0K', 135, 139]}
         #print(scan_result)
 
-        scan_result = device_scanner.scan(devices)
-        device_scanner.create_report(scan_result, args.output_format)
+        device_scanner.scan(devices)
+        device_scanner.create_report(args.output_format)

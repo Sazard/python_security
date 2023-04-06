@@ -7,6 +7,7 @@ sys.path.append('src')
 from tools import device_scanner
 from tools import network_scanner
 from tools import devices_info
+from tools import device_scanner
 
 @pytest.fixture(scope='session')
 def nmap_scan_single_ip(single_ip):
@@ -23,6 +24,7 @@ def nmap_scan_ip_network(ip, netmask):
 
 def test_scan_single_ip(nmap_scan_single_ip, single_ip):
     network_scanner.scan_single_ip(single_ip)
+    device_scanner.scan()
     device = devices_info.Device_info.GetDevice(single_ip)
     tested_ports = device.port
     expected_ports = list(nmap_scan_single_ip[single_ip]['tcp'].keys())
@@ -30,6 +32,7 @@ def test_scan_single_ip(nmap_scan_single_ip, single_ip):
 
 # def test_scan(nmap_scan_ip_network, ip, netmask):
 #     network_scanner.scan(ip, netmask)
+    # device_scanner.scan()
 #     tested_devices = devices_info.Device_info.all_devices()
 #     expected_devices = list(nmap_scan_single_ip.all_hosts())
 #     assert tested_devices == expected_devices # et on va devoir itérer pour vérifier si les devices sont bien dedans...

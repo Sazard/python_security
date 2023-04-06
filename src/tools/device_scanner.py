@@ -70,15 +70,16 @@ def create_report(output_format):
                 padding: 0;
                 margin-left: 20px;
             }
-
-            table {str(device_info[0])
+            table {
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
             th,
             td {
                 border: 1px solid #333;
                 padding: 10px;
                 text-align: left;
             }
-
             th {
                 background-color: #eee;
             }

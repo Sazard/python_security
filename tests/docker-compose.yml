@@ -1,0 +1,25 @@
+version: "3"
+services:
+  web_server:
+    image: nginx:latest
+    networks:
+      test_network:
+        ipv4_address: 172.18.1.2
+  ssh:
+    image: linuxserver/openssh-server
+    container_name: ssh-server
+    networks:
+      test_network:
+        ipv4_address: 172.18.1.3
+  vsftpd:
+    image: fauria/vsftpd
+    networks:
+      test_network:
+        ipv4_address: 172.18.1.4
+networks:
+  test_network:
+    name: test_network
+    driver: macvlan
+    ipam:
+      config:
+        - subnet: 172.18.1.0/24

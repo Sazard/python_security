@@ -21,8 +21,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Build and Run tests
-        run: |
-          pwd && ls -l
-          cd ..
-          ls
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Run tests
+      run: tests/non_interactive_run.sh

@@ -21,9 +21,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: List files
-        run: ls
-      - name: Echo it works
-        run: echo "it works"
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io docker-compose
+      - name: Build and Run tests
+        run: |
+          bash tests/non_interactive_run.sh

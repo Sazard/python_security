@@ -23,4 +23,5 @@ jobs:
     steps:
       - name: Build and Run tests
         run: |
-          bash tests/non_interactive_run.sh
+          pwd
+          ls

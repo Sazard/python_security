@@ -33,6 +33,7 @@ def http_uri(pkt):
 
 # Analising packets 
 def analisis(pkt):
+    global ip_addresses
     # if this packet is an ARP Response
     if pkt.haslayer(ARP) and pkt[scapy.ARP].op == 2:
         src_mac = pkt[scapy.ARP].hwsrc
@@ -69,7 +70,9 @@ def analisis(pkt):
 
             # Check if request count for IP exceeds threshold
             if ip_addresses[src_ip] > threshold:
-                print("WARNING : Possible brute force attack from", src_ip)
+                print("WARNING :\nPossible brute force attack from", src_ip)
+                # Reset counter
+                ip_addresses = {}
     
 def sniffing_network(ip_adress):
     # Start sniffing network traffic

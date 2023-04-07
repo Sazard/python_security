@@ -23,5 +23,4 @@ jobs:
     steps:
       - name: Build and Run tests
         run: |
-          pwd
-          ls
+          pwd && ls -l

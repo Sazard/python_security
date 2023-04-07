@@ -26,9 +26,9 @@ def test_scan_single_ip(nmap_scan_single_ip, single_ip):
     network_scanner.scan_single_ip(single_ip)
     device_scanner.scan()
     device = devices_info.Device_info.GetDevice(single_ip)
-    tested_ports = device.port
-    expected_ports = list(nmap_scan_single_ip[single_ip]['tcp'].keys())
-    assert tested_ports == expected_ports
+    # Filter the list of open ports
+    expected_ports = [int(port) for port, info in nmap_scan_single_ip[single_ip]['tcp'].items() if info['state'] == 'open']
+    assert device.port == expected_ports
 
 # def test_scan(nmap_scan_ip_network, ip, netmask):
 #     network_scanner.scan(ip, netmask)

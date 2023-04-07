@@ -43,5 +43,5 @@ if __name__ == '__main__':
         #scan_result = {'192.168.56.1': ['DESKTOP-IJ3JO0K', 135, 139]}
         #print(scan_result)
 
-        device_scanner.scan(devices)
+        device_scanner.scan()
         device_scanner.create_report(args.output_format)

@@ -17,6 +17,7 @@ Nous avons donc décidé de créer un outil d'analyse réseau contenant :
 - Second jalon (07/04/2023) :  
     - Documentation 
     - Amélioration des fonctionnalités
+    - Vérification du pipeline et des tests unitaires
 
 - Troisième jalon (10/04/2023) :  
     - PoC fonctionnel complet 

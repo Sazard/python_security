@@ -80,8 +80,7 @@ if __name__ == "__main__":
     #enable_ip_route()
     while True:
         # attack single packet
-        #TODO not working
-        #single_packet_attack(target)
+        single_packet_attack(target)
         
         # telling the `target` that we are the `host`
         # ARP poisonning

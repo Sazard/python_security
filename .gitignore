@@ -6,3 +6,5 @@ venv/
 *.egg-info/
 dist/
 build/
+*.csv
+*.json

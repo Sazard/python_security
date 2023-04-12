@@ -4,6 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 import threading
 from tools import ThreadSafeList
 from tools import devices_info
+import json
+import csv
 
 # Scan for open port
 all_opened_port = None
@@ -11,6 +13,13 @@ number_of_thread = 32
 current_ip = ""
 
 def TestPort(port):
+    """
+    Test if a port is open or closed for a given IP address.
+    The function is called by each thread to ping all port in the port_to_test list.
+
+    Args:
+        port (int): The port to test.
+    """
     #recover global variable  between thread
     global all_opened_port
     global current_ip
@@ -24,6 +33,13 @@ def TestPort(port):
     s.close()
 
 def scan():
+    """
+    Scan all IP addresses in the network for open ports.
+
+    Returns:
+        dict: A dictionary containing the scan results.
+              The keys are the IP addresses, and the values are lists of open ports.
+    """
     global all_opened_port
     global current_ip
     # devices = [(None,"192.168.1.152","192.168.1.152"),("test2","192.168.1.199","192.168.1.199"),("test3","192.168.1.245","192.168.1.254")]
@@ -53,12 +69,24 @@ def scan():
     return scan_result
 
 # Create HTML report
-
 def create_report(output_format):
+    """
+    Generates a report of the scan results in the specified format.
+
+    Args:
+        output_format (str): The format of the report. Can be "html", "csv", or "json".
+
+    Returns:
+        None
+    """
+    # get the current date and time
     now = datetime.datetime.now()
+
+    # create a filename for the report
     report_file = 'network_scan_report_' + \
         now.strftime("%Y-%m-%d_%H-%M-%S") + '.' + output_format
 
+    # create the beginning of the HTML report
     if output_format == "html":
         begin_doc_html = """
         <html>
@@ -89,24 +117,48 @@ def create_report(output_format):
         <h1>Network Scan Report</h1>
         """
 
-    with open(report_file, 'w') as f:
-        f.write(begin_doc_html)
-        f.write('<p>Scan started at ' +
-                now.strftime("%Y-%m-%d %H:%M:%S") + '</p>\n')
-        f.write('<table>\n')
-        f.write(
-            '<tr><th>IP Address</th><th>Hostname</th><th>Alias</th><th>Open Ports</th></tr>\n')
+    # create the report file and write the scan results to it
+    with open(report_file, 'w', newline='') as f:
+        if output_format == "csv":
+            writer = csv.writer(f)
+            writer.writerow(['IP Address', 'Hostname', 'Alias', 'Open Ports'])
+            for device in devices_info.all_devices:
+                ip = str(device.ip)
+                hostname = str(device.hostname)
+                alias = str(device.alias)
+                open_ports = str(device.port)
+                writer.writerow([ip, hostname, alias, open_ports])
 
-        for device in devices_info.all_devices:
+        elif output_format == "json":
+            data = []
+            for device in devices_info.all_devices:
+                ip = str(device.ip)
+                hostname = str(device.hostname)
+                alias = str(device.alias)
+                open_ports = str(device.port)
+                data.append({'IP Address': ip, 'Hostname': hostname, 'Alias': alias, 'Open Ports': open_ports})
 
-            ip = str(device.ip)
-            hostname = str(device.hostname)
-            alias = str(device.alias)
-            open_ports = str(device.port)
+            json.dump(data, f)
 
-            f.write('<tr><td>' + ip + '</td><td>' + hostname + '</td><td>' +
-                    alias + '</td><td>' + open_ports + '</td></tr>\n')
+        elif output_format == "html":
+            f.write(begin_doc_html)
+            f.write('<p>Scan started at ' +
+                    now.strftime("%Y-%m-%d %H:%M:%S") + '</p>\n')
+            f.write('<table>\n')
+            f.write(
+                '<tr><th>IP Address</th><th>Hostname</th><th>Alias</th><th>Open Ports</th></tr>\n')
 
-        f.write('</table></body></html>')
+            for device in devices_info.all_devices:
 
+                ip = str(device.ip)
+                hostname = str(device.hostname)
+                alias = str(device.alias)
+                open_ports = str(device.port)
+
+                f.write('<tr><td>' + ip + '</td><td>' + hostname + '</td><td>' +
+                        alias + '</td><td>' + open_ports + '</td></tr>\n')
+
+            f.write('</table></body></html>')
+
+    # print a message indicating the report was created
     print('Scan complete. Report saved to ' + report_file)

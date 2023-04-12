@@ -6,12 +6,31 @@ import subprocess
 from tools import devices_info
 
 def is_alive(ip):
+    """
+    Checks if the given IP address is alive by sending a ping request.
+
+    Args:
+        ip (str): The IP address to check.
+
+    Returns:
+        bool: True if the IP address is alive, False otherwise.
+    """
     # Use ping to check if IP is alive
     command = ['ping', '-c', '1', '-W', '0.5', ip]
     # print("testing alive: ", ip)
     return subprocess.call(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
 def network_enum(ip, netmask):
+    """
+    Enumerates all devices on the given IP address range and adds information about them to a list.
+
+    Args:
+        ip (str): The IP address to scan.
+        netmask (int): The subnet mask for the IP address range, as an integer between 0 and 32.
+
+    Returns:
+        None
+    """
     # Check if subnet mask is valid
     try:
         subnet_mask = int(netmask)
@@ -45,6 +64,18 @@ def network_enum(ip, netmask):
 
 
 def scan(ip, netmask):
+    """
+    Scans the IP address range specified by `ip` and `netmask`, and adds information about each device to the `Device_info` list in the `devices_info` module.
+
+    This function first checks if the subnet mask is valid. It then calculates the target IP address range and iterates through all the IP addresses in that range. For each IP address, it calls the `network_enum` function to add information about the device to the `Device_info` list.
+
+    Args:
+        ip (str): The IP address to scan.
+        netmask (int): The subnet mask for the IP address range, as an integer between 0 and 32.
+
+    Returns:
+        None
+    """
     # Check if subnet mask is valid
     try:
         subnet_mask = int(netmask)
@@ -61,5 +92,16 @@ def scan(ip, netmask):
     network_enum(ip, netmask)
 
 def scan_single_ip(ip):
+    """
+    Scans a single IP address and adds information about the device to the `Device_info` list in the `devices_info` module.
+
+    This function calls the `network_enum` function to add information about the device to the `Device_info` list.
+
+    Args:
+        ip (str): The IP address to scan.
+
+    Returns:
+        None
+    """
     # Scanning network and creating list with results
-   network_enum(ip, '32')
+    network_enum(ip, '32')

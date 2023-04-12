@@ -38,6 +38,20 @@ def nmap_scan_ip_network(ip, netmask):
     nm.scan(hosts=subnet, arguments="-p0-4096")
     return nm
 
+def check_ports(device_ip, expected_nmap_scan):
+    """
+    Check if the open ports for a device match the expected open ports.
+
+    :param device_ip: The IP address of the device.
+    :type device_ip: str
+    :param expected_nmap_scan: The nmap scan fixture.
+    :return: True if the ports match, False otherwise.
+    :rtype: bool
+    """
+    device = devices_info.DeviceInfo.getDevice(device_ip)
+    expected_ports = [int(port) for port, info in expected_nmap_scan[device_ip]['tcp'].items() if info['state'] == 'open']
+    return device.ports == expected_ports
+
 def test_scan_single_ip(nmap_scan_single_ip, single_ip):
     """
     Test the scan_single_ip() function from the network_scanner module.
@@ -49,10 +63,7 @@ def test_scan_single_ip(nmap_scan_single_ip, single_ip):
     """
     network_scanner.scan_single_ip(single_ip)
     device_scanner.scan()
-    device = devices_info.DeviceInfo.getDevice(single_ip)
-    # Filter the list of open ports
-    expected_ports = [int(port) for port, info in nmap_scan_single_ip[single_ip]['tcp'].items() if info['state'] == 'open']
-    assert device.ports == expected_ports
+    assert check_ports(single_ip, nmap_scan_single_ip)
 
 def test_network_enum(nmap_scan_ip_network, ip, netmask):
     """
@@ -87,4 +98,4 @@ def test_scan_multiple_ip(nmap_scan_single_ip, ip, netmask):
     device_scanner.scan()
     found_devices = [device.ip for device in devices_info.all_devices]
     for d_ip in found_devices:
-        test_scan_single_ip(nmap_scan_single_ip, d_ip)
+        assert check_ports(d_ip, nmap_scan_single_ip)

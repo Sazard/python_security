@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tools/pirate Module &mdash; python_security  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tests/test_network_scanner Module" href="../tests/test_network_scanner.html" />
+    <link rel="prev" title="tools/network_scanner Module" href="network_scanner.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            python_security
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="device_scanner.html">tools/device_scanner Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devices_info.html">tools/devices_info Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network_interceptor.html">tools/network_interceptor Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network_scanner.html">tools/network_scanner Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tools/pirate Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tools.pirate.bad_url_http_request"><code class="docutils literal notranslate"><span class="pre">bad_url_http_request()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.pirate.get_mac"><code class="docutils literal notranslate"><span class="pre">get_mac()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.pirate.single_packet_attack"><code class="docutils literal notranslate"><span class="pre">single_packet_attack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.pirate.spam_attack"><code class="docutils literal notranslate"><span class="pre">spam_attack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.pirate.spoof"><code class="docutils literal notranslate"><span class="pre">spoof()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tests/test_network_scanner.html">tests/test_network_scanner Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">python_security</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tools/pirate Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/pirate.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tools.pirate">
+<span id="tools-pirate-module"></span><span id="tools-pirate"></span><h1>tools/pirate Module<a class="headerlink" href="#module-tools.pirate" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.pirate.bad_url_http_request">
+<span class="sig-prename descclassname"><span class="pre">tools.pirate.</span></span><span class="sig-name descname"><span class="pre">bad_url_http_request</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tools.pirate.bad_url_http_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends an HTTP GET request to a known-bad IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.pirate.get_mac">
+<span class="sig-prename descclassname"><span class="pre">tools.pirate.</span></span><span class="sig-name descname"><span class="pre">get_mac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.pirate.get_mac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the MAC address of any device connected to the network with the given IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ip</strong> (<em>str</em>) – The IP address of the device to query.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The MAC address of the device with the given IP address, or None if the device did not respond to the request.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.pirate.single_packet_attack">
+<span class="sig-prename descclassname"><span class="pre">tools.pirate.</span></span><span class="sig-name descname"><span class="pre">single_packet_attack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.pirate.single_packet_attack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a single malformed TCP packet to the given IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<em>str</em>) – The IP address of the target to send the packet to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.pirate.spam_attack">
+<span class="sig-prename descclassname"><span class="pre">tools.pirate.</span></span><span class="sig-name descname"><span class="pre">spam_attack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.pirate.spam_attack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a burst of TCP SYN packets to the given IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target</strong> (<em>str</em>) – The IP address of the target to send the packets to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.pirate.spoof">
+<span class="sig-prename descclassname"><span class="pre">tools.pirate.</span></span><span class="sig-name descname"><span class="pre">spoof</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.pirate.spoof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spoofs the ARP cache of <cite>target_ip</cite> to make it believe that we are <cite>host_ip</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_ip</strong> (<em>str</em>) – The IP address of the target to spoof.</p></li>
+<li><p><strong>host_ip</strong> (<em>str</em>) – The IP address of the host to impersonate.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Whether to print progress messages to the console. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="network_scanner.html" class="btn btn-neutral float-left" title="tools/network_scanner Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tests/test_network_scanner.html" class="btn btn-neutral float-right" title="tests/test_network_scanner Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, MEDRANO MILISAVLJEVIC REMY SUTTER.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

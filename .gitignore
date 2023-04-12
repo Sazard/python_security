@@ -1,4 +1,4 @@
-*.html
+network*.html
 *.pyc
 __pycache__/
 venv/

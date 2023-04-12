@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tests/test_network_scanner Module &mdash; python_security  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="tools/pirate Module" href="../tools/pirate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            python_security
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../tools/device_scanner.html">tools/device_scanner Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/devices_info.html">tools/devices_info Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/network_interceptor.html">tools/network_interceptor Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/network_scanner.html">tools/network_scanner Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/pirate.html">tools/pirate Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tests/test_network_scanner Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.check_ports"><code class="docutils literal notranslate"><span class="pre">check_ports()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.nmap_scan_ip_network"><code class="docutils literal notranslate"><span class="pre">nmap_scan_ip_network()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.nmap_scan_single_ip"><code class="docutils literal notranslate"><span class="pre">nmap_scan_single_ip()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.test_network_enum"><code class="docutils literal notranslate"><span class="pre">test_network_enum()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.test_scan_multiple_ip"><code class="docutils literal notranslate"><span class="pre">test_scan_multiple_ip()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests.test_network_scanner.test_scan_single_ip"><code class="docutils literal notranslate"><span class="pre">test_scan_single_ip()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">python_security</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">tests/test_network_scanner Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tests/test_network_scanner.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tests.test_network_scanner">
+<span id="tests-test-network-scanner-module"></span><span id="tests-test-network-scanner"></span><h1>tests/test_network_scanner Module<a class="headerlink" href="#module-tests.test_network_scanner" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.check_ports">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">check_ports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_nmap_scan</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.check_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the open ports for a device match the expected open ports.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device_ip</strong> (<em>str</em>) – The IP address of the device.</p></li>
+<li><p><strong>expected_nmap_scan</strong> – The nmap scan fixture.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the ports match, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.nmap_scan_ip_network">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">nmap_scan_ip_network</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netmask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.nmap_scan_ip_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform an IP network Nmap scan on the provided IP address and netmask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ip</strong> (<em>str</em>) – The IP address to be scanned.</p></li>
+<li><p><strong>netmask</strong> (<em>str</em>) – The netmask for the IP address.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nmap.PortScanner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.nmap_scan_single_ip">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">nmap_scan_single_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">single_ip</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.nmap_scan_single_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a single IP Nmap scan on the provided IP address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>single_ip</strong> (<em>str</em>) – The IP address to be scanned.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nmap.PortScanner</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.test_network_enum">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">test_network_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmap_scan_ip_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netmask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.test_network_enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the network_enum() with the scan() function from the network_scanner module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nmap_scan_ip_network</strong> – The nmap_scan_ip_network fixture.</p></li>
+<li><p><strong>ip</strong> (<em>str</em>) – The IP address to be scanned.</p></li>
+<li><p><strong>netmask</strong> (<em>str</em>) – The netmask for the IP address.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.test_scan_multiple_ip">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">test_scan_multiple_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmap_scan_ip_network</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nmap_scan_single_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">netmask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.test_scan_multiple_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the scan_multiple_ip() function from the network_scanner module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nmap_scan_ip_network</strong> – The nmap_scan_ip_network fixture.</p></li>
+<li><p><strong>nmap_scan_single_ip</strong> – The nmap_scan_single_ip fixture.</p></li>
+<li><p><strong>ip</strong> (<em>str</em>) – The IP address to be scanned.</p></li>
+<li><p><strong>netmask</strong> (<em>str</em>) – The netmask for the IP address.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tests.test_network_scanner.test_scan_single_ip">
+<span class="sig-prename descclassname"><span class="pre">tests.test_network_scanner.</span></span><span class="sig-name descname"><span class="pre">test_scan_single_ip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nmap_scan_single_ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_ip</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_network_scanner.test_scan_single_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the scan_single_ip() function from the network_scanner module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nmap_scan_single_ip</strong> – The nmap_scan_single_ip fixture.</p></li>
+<li><p><strong>single_ip</strong> (<em>str</em>) – The IP address to be scanned.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tools/pirate.html" class="btn btn-neutral float-left" title="tools/pirate Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, MEDRANO MILISAVLJEVIC REMY SUTTER.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

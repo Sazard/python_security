@@ -65,6 +65,9 @@ Pour lancer le projet dans un environnement Docker interactif, exécutez le scri
 ... création des environnements réseau et build de l'image ...
 ```
 
+![image](https://user-images.githubusercontent.com/44167150/231593068-ff22d444-e301-40c4-a85f-6fee5a6416ba.png)
+
+
 Cela lancera un shell Bash dans l'image Docker, avec un environnement réseau créé automatiquement.
 
 ### Utilisation du mode scan de port
@@ -138,6 +141,8 @@ python3 src/main.py -a "*"
 docker run -v "$PWD/:/opt/python-securite" --name python-securite2 -it --ip 172.18.1.12 --network test_network python-securite:dev
 ```  
 
+![image](https://user-images.githubusercontent.com/44167150/231593265-e3e2f653-5e1d-4204-8c98-a611827d7ede.png)
+
 * Deuxième console dans le conteneur 2 (celui lancé avec la commande):
 ```bash
 sudo pip install -r requirements.txt # sinon problème d'import python
@@ -146,7 +151,7 @@ sudo python3 src/tools/pirate.py --target <target> --host <host>
 
 Le script `pirate.py` génère tout un tas d'attaques qui apparaitrons dans la première console.
 
-Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d'installer les dépendances.
+Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d'installer les dépendances avec sudo.
 
 ### Tests 
 

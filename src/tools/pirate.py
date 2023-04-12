@@ -17,13 +17,10 @@ def get_mac(ip):
     """
     Returns the MAC address of any device connected to the network with the given IP address.
 
-    This function sends an ARP request to the network asking for the MAC address of the device with the given IP address. If the device responds to the request, the function returns its MAC address. If the device does not respond, the function returns None.
-
-    Args:
-        ip (str): The IP address of the device to query.
-
-    Returns:
-        str or None: The MAC address of the device with the given IP address, or None if the device did not respond to the request.
+    :param ip: The IP address of the device to query.
+    :type ip: str
+    :return: The MAC address of the device with the given IP address, or None if the device did not respond to the request.
+    :rtype: str or None
     """
     ans, _ = srp(Ether(dst='ff:ff:ff:ff:ff:ff')/ARP(pdst=ip), timeout=3, verbose=0)
     if ans:
@@ -33,15 +30,13 @@ def spoof(target_ip, host_ip, verbose=True):
     """
     Spoofs the ARP cache of `target_ip` to make it believe that we are `host_ip`.
 
-    This function sends an ARP response packet to the target IP address, claiming that the MAC address of `host_ip` is our MAC address. This causes the target to update its ARP cache to associate `host_ip` with our MAC address, allowing us to intercept and modify network traffic between the target and `host_ip`.
-
-    Args:
-        target_ip (str): The IP address of the target to spoof.
-        host_ip (str): The IP address of the host to impersonate.
-        verbose (bool): Whether to print progress messages to the console. Defaults to True.
-
-    Returns:
-        None
+    :param target_ip: The IP address of the target to spoof.
+    :type target_ip: str
+    :param host_ip: The IP address of the host to impersonate.
+    :type host_ip: str
+    :param verbose: Whether to print progress messages to the console. Defaults to True.
+    :type verbose: bool
+    :return: None
     """
     print("Spoofing Attack")
     time.sleep(1)
@@ -64,13 +59,9 @@ def single_packet_attack(target):
     """
     Sends a single malformed TCP packet to the given IP address.
 
-    This function sends a TCP packet with the PAU flag set to the given IP address. This flag is not a valid TCP flag and may cause network disruption or denial of service.
-
-    Args:
-        target (str): The IP address of the target to send the packet to.
-
-    Returns:
-        None
+    :param target: The IP address of the target to send the packet to.
+    :type target: str
+    :return: None
     """
     print("single_packet_attack")
     time.sleep(1)
@@ -85,13 +76,9 @@ def spam_attack(target):
     """
     Sends a burst of TCP SYN packets to the given IP address.
 
-    This function sends 50 TCP SYN packets with a spoofed source IP address of `192.168.0.1` to the given IP address. This simulates a brute force attack, in which an attacker attempts to connect to a service running on the target system with various passwords or credentials.
-
-    Args:
-        target (str): The IP address of the target to send the packets to.
-
-    Returns:
-        None
+    :param target: The IP address of the target to send the packets to.
+    :type target: str
+    :return: None
     """
     print("Brute force attack")
     time.sleep(1)
@@ -104,13 +91,7 @@ def bad_url_http_request():
     """
     Sends an HTTP GET request to a known-bad IP address.
 
-    This function sends an HTTP GET request to the IP address `89.159.196.94`, which is known to host malicious content. The request is sent to the default HTTP port (port 80) and includes a deliberately malformed HTTP header. This simulates a malicious HTTP request, which may attempt to exploit vulnerabilities in the target system or download malware onto the system.
-
-    Args:
-        None
-
-    Returns:
-        None
+    :return: None
     """
     print("bad_url_http_request")
     time.sleep(1)

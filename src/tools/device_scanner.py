@@ -14,11 +14,12 @@ current_ip = ""
 
 def test_port(port):
     """
-    Test if a port is open or closed for a given IP address.
-    The function is called by each thread to ping all port in the port_to_test list.
+    Tests if a port is open or closed for a given IP address.
 
-    Args:
-        port (int): The port to test.
+    This function is called by each thread to ping all ports in the port_to_test list.
+
+    :param port: The port to test.
+    :type port: int
     """
     #recover global variable  between thread
     global all_open_ports
@@ -34,11 +35,10 @@ def test_port(port):
 
 def scan():
     """
-    Scan all IP addresses in the network for open ports.
+    Scans all IP addresses in the network for open ports.
 
-    Returns:
-        dict: A dictionary containing the scan results.
-              The keys are the IP addresses, and the values are lists of open ports.
+    :return: A dictionary containing the scan results. The keys are the IP addresses, and the values are lists of open ports.
+    :rtype: dict
     """
     global all_open_ports
     global current_ip
@@ -73,11 +73,9 @@ def create_report(output_format):
     """
     Generates a report of the scan results in the specified format.
 
-    Args:
-        output_format (str): The format of the report. Can be "html", "csv", or "json".
-
-    Returns:
-        None
+    :param output_format: The format of the report. Can be "html", "csv", or "json".
+    :type output_format: str
+    :return: None
     """
     # get the current date and time
     now = datetime.datetime.now()

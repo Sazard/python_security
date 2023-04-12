@@ -9,11 +9,10 @@ def is_alive(ip):
     """
     Checks if the given IP address is alive by sending a ping request.
 
-    Args:
-        ip (str): The IP address to check.
-
-    Returns:
-        bool: True if the IP address is alive, False otherwise.
+    :param ip: The IP address to check.
+    :type ip: str
+    :return: True if the IP address is alive, False otherwise.
+    :rtype: bool
     """
     # Use ping to check if IP is alive
     command = ['ping', '-c', '1', '-W', '0.5', ip]
@@ -24,12 +23,11 @@ def network_enum(ip, netmask):
     """
     Enumerates all devices on the given IP address range and adds information about them to a list.
 
-    Args:
-        ip (str): The IP address to scan.
-        netmask (int): The subnet mask for the IP address range, as an integer between 0 and 32.
-
-    Returns:
-        None
+    :param ip: The IP address to scan.
+    :type ip: str
+    :param netmask: The subnet mask for the IP address range, as an integer between 0 and 32.
+    :type netmask: int
+    :return: None
     """
     # Check if subnet mask is valid
     try:
@@ -67,14 +65,11 @@ def scan(ip, netmask):
     """
     Scans the IP address range specified by `ip` and `netmask`, and adds information about each device to the `DeviceInfo` list in the `devices_info` module.
 
-    This function first checks if the subnet mask is valid. It then calculates the target IP address range and iterates through all the IP addresses in that range. For each IP address, it calls the `network_enum` function to add information about the device to the `DeviceInfo` list.
-
-    Args:
-        ip (str): The IP address to scan.
-        netmask (int): The subnet mask for the IP address range, as an integer between 0 and 32.
-
-    Returns:
-        None
+    :param ip: The IP address to scan.
+    :type ip: str
+    :param netmask: The subnet mask for the IP address range, as an integer between 0 and 32.
+    :type netmask: int
+    :return: None
     """
     # Check if subnet mask is valid
     try:
@@ -95,13 +90,9 @@ def scan_single_ip(ip):
     """
     Scans a single IP address and adds information about the device to the `DeviceInfo` list in the `devices_info` module.
 
-    This function calls the `network_enum` function to add information about the device to the `DeviceInfo` list.
-
-    Args:
-        ip (str): The IP address to scan.
-
-    Returns:
-        None
+    :param ip: The IP address to scan.
+    :type ip: str
+    :return: None
     """
     # Scanning network and creating list with results
     network_enum(ip, '32')

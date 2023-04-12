@@ -21,12 +21,11 @@ def add_mac_ip(mac, ip):
     """
     Adds MAC-IP bindings to the `mac_ip_dict` dictionary.
 
-    Args:
-        mac (str): The MAC address of the device.
-        ip (str): The IP address of the device.
-
-    Returns:
-        None
+    :param mac: The MAC address of the device.
+    :type mac: str
+    :param ip: The IP address of the device.
+    :type ip: str
+    :return: None
     """
     mac_ip_dict[mac] = ip
 
@@ -35,11 +34,8 @@ def http_uri(pkt):
     """
     Sniffs for HTTP requests that contain an IP address in the URL path and prints a warning message if found.
 
-    Args:
-        pkt: A packet captured by Scapy.
-
-    Returns:
-        None
+    :param pkt: A packet captured by Scapy.
+    :return: None
     """
     # Regex to analise URL
     ip_regex = re.compile(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
@@ -58,11 +54,8 @@ def analyze(pkt):
     - Single-packet attack: detects single-packet attack based on TCP flags
     - Brute force attack: detects possible brute force attack based on number of requests from same IP in 1 minute window
 
-    Args:
-        pkt: packet to be analyzed
-
-    Returns:
-        None
+    :param pkt: packet to be analyzed
+    :return: None
     """
     global ip_addresses
     # if this packet is an ARP Response
@@ -109,11 +102,9 @@ def sniffing_network(ip_adress):
     """
     Sniffs the network traffic and analyses packets to detect possible attacks.
 
-    Args:
-        ip_adress (str): The IP address to sniff traffic for.
-
-    Returns:
-        None
+    :param ip_adress: The IP address to sniff traffic for.
+    :type ip_adress: str
+    :return: None
     """
     # Start sniffing network traffic
     scapy.sniff(prn=analyze, filter="arp or port 80 or tcp", store=0)

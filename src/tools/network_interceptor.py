@@ -13,16 +13,34 @@ queue = deque()
 # Packet received detection
 threshold = 50
 
-
 # Create a dictionary to store the MAC-IP bindings
 mac_ip_dict = {}
 
 # Define a function to add MAC-IP bindings to the dictionary
 def add_mac_ip(mac, ip):
+    """
+    Adds MAC-IP bindings to the `mac_ip_dict` dictionary.
+
+    Args:
+        mac (str): The MAC address of the device.
+        ip (str): The IP address of the device.
+
+    Returns:
+        None
+    """
     mac_ip_dict[mac] = ip
 
 # Sniffing for http request with ip in uri
 def http_uri(pkt):
+    """
+    Sniffs for HTTP requests that contain an IP address in the URL path and prints a warning message if found.
+
+    Args:
+        pkt: A packet captured by Scapy.
+
+    Returns:
+        None
+    """
     # Regex to analise URL
     ip_regex = re.compile(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     
@@ -31,8 +49,21 @@ def http_uri(pkt):
     if (ip_regex.search(url)):
         print("WARNING :\nHTTP access with ip in URL : http://",url)
 
-# Analising packets 
-def analisis(pkt):
+# Analyze packets 
+def analyze(pkt):
+    """
+    This function analyzes packets for various types of attacks
+    - ARP poisoning: detects ARP poisoning attack
+    - HTTP access with IP in URL: detects HTTP requests that contain IP address in URL
+    - Single-packet attack: detects single-packet attack based on TCP flags
+    - Brute force attack: detects possible brute force attack based on number of requests from same IP in 1 minute window
+
+    Args:
+        pkt: packet to be analyzed
+
+    Returns:
+        None
+    """
     global ip_addresses
     # if this packet is an ARP Response
     if pkt.haslayer(ARP) and pkt[scapy.ARP].op == 2:
@@ -75,8 +106,17 @@ def analisis(pkt):
                 ip_addresses = {}
     
 def sniffing_network(ip_adress):
+    """
+    Sniffs the network traffic and analyses packets to detect possible attacks.
+
+    Args:
+        ip_adress (str): The IP address to sniff traffic for.
+
+    Returns:
+        None
+    """
     # Start sniffing network traffic
-    scapy.sniff(prn=analisis, filter="arp or port 80 or tcp", store=0)
+    scapy.sniff(prn=analyze, filter="arp or port 80 or tcp", store=0)
 
     # Add MAC-IP bindings to the dictionary as they are discovered
     scapy.arping(ip_adress, verbose=0, timeout=1, retry=0, store=0, prn=add_mac_ip)

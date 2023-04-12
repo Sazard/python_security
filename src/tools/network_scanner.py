@@ -52,22 +52,22 @@ def network_enum(ip, netmask):
             # print("testing: ", host)
             hostname, alias, addresslist = socket.gethostbyaddr(address)
             print("Is alive: ", host)
-            devices_info.Device_info.AddDevice(addresslist[0],alias,hostname[0])
+            devices_info.DeviceInfo.addDevice(addresslist[0],alias,hostname[0])
         except socket.herror:
             if is_alive(address):
                 print("Is alive: ", host)
                 hostname = None
                 alias = None
                 addresslist = address
-                devices_info.Device_info.AddDevice(addresslist,alias,hostname)
+                devices_info.DeviceInfo.addDevice(addresslist,alias,hostname)
 
 
 
 def scan(ip, netmask):
     """
-    Scans the IP address range specified by `ip` and `netmask`, and adds information about each device to the `Device_info` list in the `devices_info` module.
+    Scans the IP address range specified by `ip` and `netmask`, and adds information about each device to the `DeviceInfo` list in the `devices_info` module.
 
-    This function first checks if the subnet mask is valid. It then calculates the target IP address range and iterates through all the IP addresses in that range. For each IP address, it calls the `network_enum` function to add information about the device to the `Device_info` list.
+    This function first checks if the subnet mask is valid. It then calculates the target IP address range and iterates through all the IP addresses in that range. For each IP address, it calls the `network_enum` function to add information about the device to the `DeviceInfo` list.
 
     Args:
         ip (str): The IP address to scan.
@@ -93,9 +93,9 @@ def scan(ip, netmask):
 
 def scan_single_ip(ip):
     """
-    Scans a single IP address and adds information about the device to the `Device_info` list in the `devices_info` module.
+    Scans a single IP address and adds information about the device to the `DeviceInfo` list in the `devices_info` module.
 
-    This function calls the `network_enum` function to add information about the device to the `Device_info` list.
+    This function calls the `network_enum` function to add information about the device to the `DeviceInfo` list.
 
     Args:
         ip (str): The IP address to scan.

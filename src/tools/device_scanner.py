@@ -8,11 +8,11 @@ import json
 import csv
 
 # Scan for open port
-all_opened_port = None
+all_open_ports = None
 number_of_thread = 32
 current_ip = ""
 
-def TestPort(port):
+def test_port(port):
     """
     Test if a port is open or closed for a given IP address.
     The function is called by each thread to ping all port in the port_to_test list.
@@ -21,14 +21,14 @@ def TestPort(port):
         port (int): The port to test.
     """
     #recover global variable  between thread
-    global all_opened_port
+    global all_open_ports
     global current_ip
     #socket creation
     s = socket(AF_INET, SOCK_STREAM)
     #ping
     conn = s.connect_ex((current_ip, port))
     if (conn == 0):
-        all_opened_port.append(port)
+        all_open_ports.append(port)
         print("Port " + current_ip + ":" +  port + "  is Open")
     s.close()
 
@@ -40,7 +40,7 @@ def scan():
         dict: A dictionary containing the scan results.
               The keys are the IP addresses, and the values are lists of open ports.
     """
-    global all_opened_port
+    global all_open_ports
     global current_ip
     # devices = [(None,"192.168.1.152","192.168.1.152"),("test2","192.168.1.199","192.168.1.199"),("test3","192.168.1.245","192.168.1.254")]
     scan_result = {}
@@ -52,7 +52,7 @@ def scan():
 
         print('Starting scan on host: ', ip)
         #reset oppened port between ip
-        all_opened_port = ThreadSafeList.ThreadSafeList()
+        all_open_ports = ThreadSafeList.ThreadSafeList()
         current_ip = ip
 
         #create a list of port to create
@@ -60,12 +60,12 @@ def scan():
         
         #threadpool to ping all port in the port_to_test list
         with ThreadPoolExecutor(max_workers=number_of_thread) as executor:               
-            executor.map(TestPort, port_to_test)
+            executor.map(test_port, port_to_test)
         
         #wait for all thread to finish
         executor.shutdown(wait=True, cancel_futures=False)
          
-        devices_info.Device_info.GetDevice(ip).port = all_opened_port.iterator()
+        devices_info.DeviceInfo.getDevice(ip).ports = all_open_ports.iterator()
     return scan_result
 
 # Create HTML report
@@ -126,7 +126,7 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                open_ports = str(device.port)
+                open_ports = str(device.ports)
                 writer.writerow([ip, hostname, alias, open_ports])
 
         elif output_format == "json":
@@ -135,7 +135,7 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                open_ports = str(device.port)
+                open_ports = str(device.ports)
                 data.append({'IP Address': ip, 'Hostname': hostname, 'Alias': alias, 'Open Ports': open_ports})
 
             json.dump(data, f)
@@ -153,7 +153,7 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                open_ports = str(device.port)
+                open_ports = str(device.ports)
 
                 f.write('<tr><td>' + ip + '</td><td>' + hostname + '</td><td>' +
                         alias + '</td><td>' + open_ports + '</td></tr>\n')

@@ -83,10 +83,11 @@ def test_network_enum(nmap_scan_ip_network, ip, netmask):
     # Check if each item of 'expected_devices' is present in the list 'found_devices'
     assert all(host in found_devices for host in expected_devices)
 
-def test_scan_multiple_ip(nmap_scan_single_ip, ip, netmask):
+def test_scan_multiple_ip(nmap_scan_ip_network, nmap_scan_single_ip, ip, netmask):
     """
     Test the scan_multiple_ip() function from the network_scanner module.
 
+    :param nmap_scan_ip_network: The nmap_scan_ip_network fixture.
     :param nmap_scan_single_ip: The nmap_scan_single_ip fixture.
     :param ip: The IP address to be scanned.
     :type ip: str
@@ -96,6 +97,6 @@ def test_scan_multiple_ip(nmap_scan_single_ip, ip, netmask):
     """
     network_scanner.scan(ip, netmask)
     device_scanner.scan()
-    found_devices = [device.ip for device in devices_info.all_devices]
+    found_devices = list(nmap_scan_ip_network.all_hosts())
     for d_ip in found_devices:
         assert check_ports(d_ip, nmap_scan_single_ip)

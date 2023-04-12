@@ -151,7 +151,12 @@ sudo python3 src/tools/pirate.py --target <target> --host <host>
 
 Le script `pirate.py` génère tout un tas d'attaques qui apparaitrons dans la première console.
 
+Cela devrait être ainsi :
+
+![image](https://user-images.githubusercontent.com/44167150/231594159-21b2b501-ca3a-4e21-847c-bcca6e5e2842.png)
+
 Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d'installer les dépendances avec sudo.
+L'avantage d'utiliser le docker est qu'il est directement en `root`.
 
 ### Tests 
 

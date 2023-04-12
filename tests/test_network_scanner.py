@@ -86,5 +86,5 @@ def test_scan_multiple_ip(nmap_scan_single_ip, ip, netmask):
     network_scanner.scan(ip, netmask)
     device_scanner.scan()
     found_devices = [device.ip for device in devices_info.all_devices]
-    for d in found_devices:
-        test_scan_single_ip(nmap_scan_single_ip, d.ip)
+    for d_ip in found_devices:
+        test_scan_single_ip(nmap_scan_single_ip, d_ip)

@@ -2,3 +2,4 @@ scapy
 python-nmap
 pytest
 sphinx
+sphinx_rtd_theme

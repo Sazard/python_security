@@ -10,7 +10,8 @@ TODO : Lien vers la documentation --> GitHub Pages
 ✅ Scan de chaque machine du réseau \
 ✅ Génération de rapport (HTML, JSON, CSV) \
 ✅ Scan de port multithread \
-✅ Environnement Docker pour tests et exécution
+✅ Environnement Docker pour tests et exécution \
+✅ Simulation d'attaques avec `src/tools/pirate.py`
 
 # Dépendances
 * `python 3.x` et le contenu de `requirements.txt`
@@ -53,9 +54,17 @@ options:
                         Single IP address to scan
   -f output_format, --output-format output_format
                         Output format
-  -a analyse, --analyse analyse
+  -a analyze, --analyse analyse
                         Analyse network traffic
 ```
+
+Explication des options :
+* -h, --help : Affiche l'aide et la liste des options disponibles.
+* -i ip, --ip ip : Spécifie l'adresse IP de l'hôte.
+* -n netmask, --netmask netmask : Spécifie le masque de sous-réseau.
+* -1 single_ip, --single-ip single_ip : Spécifie une seule adresse IP à analyser.
+* -f output_format, --output-format output_format : Choisissez le format de sortie pour les rapports ("html", "json", "csv").
+* -a analyse, --analyse analyse : Analyse le trafic réseau. Utilisez -a "*" pour analyser toutes les interfaces réseau de la machine.
 
 ## Avec docker
 Pour lancer le projet dans un environnement Docker interactif, exécutez le script `build_and_run.sh` :
@@ -75,6 +84,8 @@ Cela lancera un shell Bash dans l'image Docker, avec un environnement réseau cr
 **1. Avec docker : lancera un shell interactif dans un docker ayant l'IP 172.18.1.10 dans un réseau dédié**
 ```bash
 ./build_and_run.sh
+... création des environnements réseau et build de l'image ...
+
 python3 src/main.py --help
 usage: main.py [-h] [-i ip] [-n netmask] [-1 single_ip] [-f output_format] [-a analyse]
 
@@ -126,6 +137,7 @@ Lancer dans deux consoles séparées - avec ou sans docker - si docker est utili
 **1. Lancer un shell interactif automatiquement dans le conteneur 1 avec l'IP 172.18.1.10**
 ```bash
 ./build_and_run.sh 
+... création des environnements réseau et build de l'image ...
 ```
 
 * Première console dans le conteneur 1 (celui lancé avec `build_and_run.sh`):

@@ -1,7 +1,7 @@
 .. _tools-network_scanner:
 
-tools/network_scanner Module
-============================
+Module: tools/network_scanner
+=============================
 
 .. automodule:: tools.network_scanner
    :members:

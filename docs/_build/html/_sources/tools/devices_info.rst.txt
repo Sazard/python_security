@@ -1,7 +1,7 @@
 .. _tools-devices_info:
 
-tools/devices_info Module
-=========================
+Module: tools/devices_info
+==========================
 
 .. automodule:: tools.devices_info
    :members:

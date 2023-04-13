@@ -1,7 +1,7 @@
 .. _tools-pirate:
 
-tools/pirate Module
-===================
+Module: tools/pirate
+====================
 
 .. automodule:: tools.pirate
    :members:

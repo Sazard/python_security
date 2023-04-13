@@ -1,7 +1,7 @@
 .. _tools-network_interceptor:
 
-tools/network_interceptor Module
-================================
+Module: tools/network_interceptor
+=================================
 
 .. automodule:: tools.network_interceptor
    :members:

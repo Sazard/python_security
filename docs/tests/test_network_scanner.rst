@@ -1,7 +1,7 @@
 .. _tests-test_network_scanner:
 
-tests/test_network_scanner Module
-=================================
+Module: tests/test_network_scanner
+==================================
 
 .. automodule:: tests.test_network_scanner
    :members:

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Security &mdash; python_security  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module: tools/device_scanner" href="tools/device_scanner.html" />
+    <link rel="prev" title="Bienvenue dans la documentation de python_security !" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            python_security
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Python Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnalites">Fonctionnalités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependances">Dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installez-les-dependances">Installez les dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-sans-docker">Utilisation sans docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-avec-docker">Utilisation avec docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-du-mode-scan-de-port">Utilisation du mode scan de port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation-du-mode-analyse-reseau">Utilisation du mode analyse réseau</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#jalons">Jalons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contributeurs">Contributeurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/device_scanner.html">Module: tools/device_scanner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/devices_info.html">Module: tools/devices_info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/network_interceptor.html">Module: tools/network_interceptor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/network_scanner.html">Module: tools/network_scanner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/pirate.html">Module: tools/pirate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests/test_network_scanner.html">Module: tests/test_network_scanner</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python_security</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Python Security</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="python-security">
+<span id="introduction"></span><h1>Python Security<a class="headerlink" href="#python-security" title="Permalink to this heading">¶</a></h1>
+<p>Python Security est un projet réalisé par notre groupe de 4 étudiants dans le cadre du cours de sécurité Python à l’EPITA.</p>
+<p>TODO : Lien vers la documentation –&gt; GitHub Pages</p>
+<section id="fonctionnalites">
+<h2>Fonctionnalités<a class="headerlink" href="#fonctionnalites" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>✅ Analyse réseau</p></li>
+<li><p>✅ Scan de chaque machine du réseau</p></li>
+<li><p>✅ Génération de rapport (HTML, JSON, CSV)</p></li>
+<li><p>✅ Scan de port multithread</p></li>
+<li><p>✅ Environnement Docker pour tests et exécution</p></li>
+<li><p>✅ Simulation d’attaques avec <code class="docutils literal notranslate"><span class="pre">src/tools/pirate.py</span></code></p></li>
+</ul>
+</section>
+<section id="dependances">
+<h2>Dépendances<a class="headerlink" href="#dependances" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.x</span></code> et le contenu de <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Clonez le dépôt :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Sazard</span><span class="o">/</span><span class="n">python_security</span>
+<span class="n">cd</span> <span class="n">python_security</span>
+</pre></div>
+</div>
+</section>
+<section id="installez-les-dependances">
+<h2>Installez les dépendances<a class="headerlink" href="#installez-les-dependances" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="utilisation-sans-docker">
+<h2>Utilisation sans docker<a class="headerlink" href="#utilisation-sans-docker" title="Permalink to this heading">¶</a></h2>
+<p>Lancer directement <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">src/main.py</span> <span class="pre">--help</span></code> pour voir les options.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="n">analyse</span><span class="p">]</span>
+
+<span class="n">Basic</span> <span class="n">network</span> <span class="n">scanner</span>
+
+<span class="n">options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">,</span> <span class="o">--</span><span class="n">ip</span> <span class="n">ip</span>        <span class="n">Host</span> <span class="n">IP</span> <span class="n">address</span>
+  <span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">,</span> <span class="o">--</span><span class="n">netmask</span> <span class="n">netmask</span>
+                        <span class="n">Subnet</span> <span class="n">mask</span>
+  <span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">,</span> <span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">ip</span> <span class="n">single_ip</span>
+                        <span class="n">Single</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">to</span> <span class="n">scan</span>
+  <span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">format</span> <span class="n">output_format</span>
+                        <span class="n">Output</span> <span class="nb">format</span>
+  <span class="o">-</span><span class="n">a</span> <span class="n">analyze</span><span class="p">,</span> <span class="o">--</span><span class="n">analyse</span> <span class="n">analyse</span>
+                        <span class="n">Analyse</span> <span class="n">network</span> <span class="n">traffic</span>
+</pre></div>
+</div>
+<p>Explication des options :</p>
+<ul class="simple">
+<li><p>-h, –help : Affiche l’aide et la liste des options disponibles.</p></li>
+<li><p>-i ip, –ip ip : Spécifie l’adresse IP de l’hôte.</p></li>
+<li><p>-n netmask, –netmask netmask : Spécifie le masque de sous-réseau.</p></li>
+<li><p>-1 single_ip, –single-ip single_ip : Spécifie une seule adresse IP à analyser.</p></li>
+<li><p>-f output_format, –output-format output_format : Choisissez le format de sortie pour les rapports (“html”, “json”, “csv”).</p></li>
+<li><p>-a analyse, –analyse analyse : Analyse le trafic réseau. Utilisez -a “*” pour analyser toutes les interfaces réseau de la machine.</p></li>
+</ul>
+</section>
+<section id="utilisation-avec-docker">
+<h2>Utilisation avec docker<a class="headerlink" href="#utilisation-avec-docker" title="Permalink to this heading">¶</a></h2>
+<p>Pour lancer le projet dans un environnement Docker interactif, exécutez le script <code class="docutils literal notranslate"><span class="pre">build_and_run.sh</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_and_run</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">...</span> <span class="n">création</span> <span class="n">des</span> <span class="n">environnements</span> <span class="n">réseau</span> <span class="n">et</span> <span class="n">build</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;image ...</span>
+</pre></div>
+</div>
+<a class="reference external image-reference" href="https://user-images.githubusercontent.com/44167150/231593068-ff22d444-e301-40c4-a85f-6fee5a6416ba.png"><img alt="image" src="https://user-images.githubusercontent.com/44167150/231593068-ff22d444-e301-40c4-a85f-6fee5a6416ba.png" /></a>
+<p>Cela lancera un shell Bash dans l’image Docker, avec un environnement réseau créé automatiquement.</p>
+</section>
+<section id="utilisation-du-mode-scan-de-port">
+<h2>Utilisation du mode scan de port<a class="headerlink" href="#utilisation-du-mode-scan-de-port" title="Permalink to this heading">¶</a></h2>
+<p><strong>1. Avec docker : lancera un shell interactif dans un docker ayant l’IP 172.18.1.10 dans un réseau dédié</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_and_run</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">...</span> <span class="n">création</span> <span class="n">des</span> <span class="n">environnements</span> <span class="n">réseau</span> <span class="n">et</span> <span class="n">build</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;image ...</span>
+
+<span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="n">analyse</span><span class="p">]</span>
+
+<span class="n">Basic</span> <span class="n">network</span> <span class="n">scanner</span>
+
+<span class="n">options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">,</span> <span class="o">--</span><span class="n">ip</span> <span class="n">ip</span>        <span class="n">Host</span> <span class="n">IP</span> <span class="n">address</span>
+  <span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">,</span> <span class="o">--</span><span class="n">netmask</span> <span class="n">netmask</span>
+                        <span class="n">Subnet</span> <span class="n">mask</span>
+  <span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">,</span> <span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">ip</span> <span class="n">single_ip</span>
+                        <span class="n">Single</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">to</span> <span class="n">scan</span>
+  <span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">format</span> <span class="n">output_format</span>
+                        <span class="n">Output</span> <span class="nb">format</span>
+  <span class="o">-</span><span class="n">a</span> <span class="n">analyse</span><span class="p">,</span> <span class="o">--</span><span class="n">analyse</span> <span class="n">analyse</span>
+                        <span class="n">Analyse</span> <span class="n">network</span> <span class="n">traffic</span>
+
+<span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">ip</span> <span class="mf">172.18.1.3</span> <span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="nb">format</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Les rapports peuvent être générés aux formats nommés “html”, “json”, “csv” avec l’option “-f”, “–format”</p>
+<p><strong>2. Sans docker : lancer le script directement sans docker</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">usage</span><span class="p">:</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">a</span> <span class="n">analyse</span><span class="p">]</span>
+
+<span class="n">Basic</span> <span class="n">network</span> <span class="n">scanner</span>
+
+<span class="n">options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>            <span class="n">show</span> <span class="n">this</span> <span class="n">help</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+  <span class="o">-</span><span class="n">i</span> <span class="n">ip</span><span class="p">,</span> <span class="o">--</span><span class="n">ip</span> <span class="n">ip</span>        <span class="n">Host</span> <span class="n">IP</span> <span class="n">address</span>
+  <span class="o">-</span><span class="n">n</span> <span class="n">netmask</span><span class="p">,</span> <span class="o">--</span><span class="n">netmask</span> <span class="n">netmask</span>
+                        <span class="n">Subnet</span> <span class="n">mask</span>
+  <span class="o">-</span><span class="mi">1</span> <span class="n">single_ip</span><span class="p">,</span> <span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">ip</span> <span class="n">single_ip</span>
+                        <span class="n">Single</span> <span class="n">IP</span> <span class="n">address</span> <span class="n">to</span> <span class="n">scan</span>
+  <span class="o">-</span><span class="n">f</span> <span class="n">output_format</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="nb">format</span> <span class="n">output_format</span>
+                        <span class="n">Output</span> <span class="nb">format</span>
+  <span class="o">-</span><span class="n">a</span> <span class="n">analyse</span><span class="p">,</span> <span class="o">--</span><span class="n">analyse</span> <span class="n">analyse</span>
+                        <span class="n">Analyse</span> <span class="n">network</span> <span class="n">traffic</span>
+
+<span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">ip</span> <span class="mf">65.21.239.190</span> <span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="nb">format</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="utilisation-du-mode-analyse-reseau">
+<h2>Utilisation du mode analyse réseau<a class="headerlink" href="#utilisation-du-mode-analyse-reseau" title="Permalink to this heading">¶</a></h2>
+<p>Lancer dans deux consoles séparées - avec ou sans docker - si docker est utilisé il faut lancer deux instances différentes à partir de la commande <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> et changer l’IP, par exemple :</p>
+<p><strong>1. Lancer un shell interactif automatiquement dans le conteneur 1 avec l’IP 172.18.1.10</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_and_run</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">...</span> <span class="n">création</span> <span class="n">des</span> <span class="n">environnements</span> <span class="n">réseau</span> <span class="n">et</span> <span class="n">build</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;image ...</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Première console dans le conteneur 1 (celui lancé avec <code class="docutils literal notranslate"><span class="pre">build_and_run.sh</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">a</span> <span class="s2">&quot;*&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><em>Le script ``main.py`` avec le mode “-a” (pour analyse réseau) sera en écoute sur toutes les interfaces réseau de la machine.</em></p>
+<p><strong>2. Lancer un shell interactif dans le conteneur 2 avec l’IP 172.18.1.12 en lançant la commande suivante :</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&quot;$PWD/:/opt/python-securite&quot;</span> <span class="o">--</span><span class="n">name</span> <span class="n">python</span><span class="o">-</span><span class="n">securite2</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">ip</span> <span class="mf">172.18.1.12</span> <span class="o">--</span><span class="n">network</span> <span class="n">test_network</span> <span class="n">python</span><span class="o">-</span><span class="n">securite</span><span class="p">:</span><span class="n">dev</span>
+</pre></div>
+</div>
+<a class="reference external image-reference" href="https://user-images.githubusercontent.com/44167150/231593265-e3e2f653-5e1d-4204-8c98-a611827d7ede.png"><img alt="image" src="https://user-images.githubusercontent.com/44167150/231593265-e3e2f653-5e1d-4204-8c98-a611827d7ede.png" /></a>
+<ul>
+<li><p>Deuxième console dans le conteneur 2 (celui lancé avec la commande):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">pirate</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="o">&lt;</span><span class="n">target</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">host</span> <span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Le script <code class="docutils literal notranslate"><span class="pre">pirate.py</span></code> génère tout un tas d’attaques qui apparaitrons dans la première console. Etant donné que le docker est en <code class="docutils literal notranslate"><span class="pre">root</span></code> il n’y a pas besoin de sudo pour lancer le script d’attaque.</p>
+<p>Cela devrait être ainsi :</p>
+<a class="reference external image-reference" href="https://user-images.githubusercontent.com/44167150/231594159-21b2b501-ca3a-4e21-847c-bcca6e5e2842.png"><img alt="image" src="https://user-images.githubusercontent.com/44167150/231594159-21b2b501-ca3a-4e21-847c-bcca6e5e2842.png" /></a>
+<p>⚠️ Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d’installer les dépendances avec sudo.
+L’avantage d’utiliser le docker est qu’il est directement en <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+<p>Utilisation sans docker :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span> <span class="c1"># sinon problème d&#39;import python</span>
+<span class="n">sudo</span> <span class="n">python3</span> <span class="n">src</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">pirate</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">target</span> <span class="o">&lt;</span><span class="n">target</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">host</span> <span class="o">&lt;</span><span class="n">host</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this heading">¶</a></h1>
+<p>⚠️ attention c’est très long, regardez plutôt la trace dans GitHub Actions</p>
+<p>Pour lancer les tests, exécutez le script <code class="docutils literal notranslate"><span class="pre">tests/non_interactive_run.sh</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">tests</span><span class="o">/</span><span class="n">non_interactive_run</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Ce script appelle directement <code class="docutils literal notranslate"><span class="pre">pytest</span></code> et effectue le tout dans docker.</p>
+</section>
+<section id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h1>
+<p>La documentation est générée à partir du code Python à l’aide de Sphinx et du thème Read the Docs. Pour générer la documentation, exécutez les commandes suivantes :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span>
+<span class="n">make</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Vous pouvez ensuite accéder à la documentation en ouvrant le fichier <code class="docutils literal notranslate"><span class="pre">docs/_build/html/index.html</span></code> dans votre navigateur ou y accéder via <a class="reference external" href="https://github.com">ce lien à modifier</a>.</p>
+</section>
+<section id="jalons">
+<h1>Jalons<a class="headerlink" href="#jalons" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Premier jalon (05/04/2023) :</p>
+<ul>
+<li><p>POC fonctionnalités de base (sniffing : parseur de paquet, scan de port : finger printing) ✅</p></li>
+<li><p>Revue de code ✅</p></li>
+</ul>
+</li>
+<li><p>Second jalon (07/04/2023) :</p>
+<ul>
+<li><p>Documentation ✅</p></li>
+<li><p>Amélioration des fonctionnalités ✅</p></li>
+<li><p>Vérification du pipeline et des tests unitaires ✅</p></li>
+</ul>
+</li>
+<li><p>Troisième jalon (15/04/2023) :</p>
+<ul>
+<li><p>Revue documentation ✅</p></li>
+<li><p>Export des données dans les formats convenus ✅</p></li>
+<li><p>Environnement Docker complet pour les tests ✅</p></li>
+</ul>
+</li>
+<li><p>Quatrième jalon (20/04/2023) :</p>
+<ul>
+<li><p>PoC complet</p></li>
+<li><p>Documentation de run complète</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="contributeurs">
+<h1>Contributeurs<a class="headerlink" href="#contributeurs" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Stanislas MEDRANO</p></li>
+<li><p>Clément MILISAVLJEVIC</p></li>
+<li><p>Antoine REMY</p></li>
+<li><p>Nicolas SUTTER</p></li>
+</ul>
+<p>Ce projet est réalisé dans le cadre du cours de sécurité Python à l’EPITA.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Bienvenue dans la documentation de python_security !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tools/device_scanner.html" class="btn btn-neutral float-right" title="Module: tools/device_scanner" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, MEDRANO MILISAVLJEVIC REMY SUTTER.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

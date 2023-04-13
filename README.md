@@ -4,7 +4,7 @@ Python Security est un projet réalisé par notre groupe de 4 étudiants dans le
 
 TODO : Lien vers la documentation --> GitHub Pages
 
-# Fonctionnalités
+## Fonctionnalités
 
 * ✅ Analyse réseau
 * ✅ Scan de chaque machine du réseau
@@ -13,12 +13,12 @@ TODO : Lien vers la documentation --> GitHub Pages
 * ✅ Environnement Docker pour tests et exécution
 * ✅ Simulation d'attaques avec `src/tools/pirate.py`
 
-# Dépendances
+## Dépendances
 * `python 3.x` et le contenu de `requirements.txt`
 * `docker`
 * `docker-compose`
 
-# Installation
+## Installation
 
 * Clonez le dépôt :
 
@@ -27,15 +27,13 @@ git clone https://github.com/Sazard/python_security
 cd python_security
 ```
 
-### Installez les dépendances :
+## Installez les dépendances
 
 ```
 pip install -r requirements.txt
 ```
 
-# Utilisation
-
-## Sans docker
+## Utilisation sans docker
 
 Lancer directement `python3 src/main.py --help` pour voir les options.
 
@@ -66,7 +64,7 @@ Explication des options :
 * -f output_format, --output-format output_format : Choisissez le format de sortie pour les rapports ("html", "json", "csv").
 * -a analyse, --analyse analyse : Analyse le trafic réseau. Utilisez -a "*" pour analyser toutes les interfaces réseau de la machine.
 
-## Avec docker
+## Utilisation avec docker
 Pour lancer le projet dans un environnement Docker interactif, exécutez le script `build_and_run.sh` :
 
 ```
@@ -79,7 +77,7 @@ Pour lancer le projet dans un environnement Docker interactif, exécutez le scri
 
 Cela lancera un shell Bash dans l'image Docker, avec un environnement réseau créé automatiquement.
 
-### Utilisation du mode scan de port
+## Utilisation du mode scan de port
 
 **1. Avec docker : lancera un shell interactif dans un docker ayant l'IP 172.18.1.10 dans un réseau dédié**
 ```
@@ -130,7 +128,7 @@ options:
 python3 src/main.py --single-ip 65.21.239.190 -f <format>
 ```
 
-### Utilisation du mode analyse réseau
+## Utilisation du mode analyse réseau
 
 Lancer dans deux consoles séparées - avec ou sans docker - si docker est utilisé il faut lancer deux instances différentes à partir de la commande `docker run` et changer l'IP, par exemple : 
 
@@ -175,7 +173,7 @@ sudo pip install -r requirements.txt # sinon problème d'import python
 sudo python3 src/tools/pirate.py --target <target> --host <host>
 ```
 
-### Tests 
+# Tests 
 
 ⚠️ attention c'est très long, regardez plutôt la trace dans GitHub Actions
 
@@ -187,7 +185,7 @@ Pour lancer les tests, exécutez le script `tests/non_interactive_run.sh` :
 
 Ce script appelle directement `pytest` et effectue le tout dans docker.
 
-### Documentation
+# Documentation
 
 La documentation est générée à partir du code Python à l'aide de Sphinx et du thème Read the Docs. Pour générer la documentation, exécutez les commandes suivantes :
 

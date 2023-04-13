@@ -1,7 +1,7 @@
 .. _tools-device_scanner:
 
-tools/device_scanner Module
-===========================
+Module: tools/device_scanner 
+============================
 
 .. automodule:: tools.device_scanner
    :members:

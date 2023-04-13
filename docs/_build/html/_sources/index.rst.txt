@@ -6,12 +6,11 @@
 Bienvenue dans la documentation de python_security !
 ====================================================
 
-.. mdinclude:: ../README.md
-
 .. toctree::
    :maxdepth: 2
    :caption: Sommaire
 
+   introduction
    tools/device_scanner
    tools/devices_info
    tools/network_interceptor
@@ -19,8 +18,8 @@ Bienvenue dans la documentation de python_security !
    tools/pirate
    tests/test_network_scanner
 
-Indices and tables
-==================
+Tables et index
+===============
 
 * :ref:`genindex`
 * :ref:`modindex`

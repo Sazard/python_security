@@ -21,7 +21,8 @@ author = 'MEDRANO MILISAVLJEVIC REMY SUTTER'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'm2r2'
 ]
 
 templates_path = ['_templates']

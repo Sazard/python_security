@@ -6,12 +6,12 @@ TODO : Lien vers la documentation --> GitHub Pages
 
 # Fonctionnalités
 
-✅ Analyse réseau \
-✅ Scan de chaque machine du réseau \
-✅ Génération de rapport (HTML, JSON, CSV) \
-✅ Scan de port multithread \
-✅ Environnement Docker pour tests et exécution \
-✅ Simulation d'attaques avec `src/tools/pirate.py`
+* ✅ Analyse réseau
+* ✅ Scan de chaque machine du réseau
+* ✅ Génération de rapport (HTML, JSON, CSV)
+* ✅ Scan de port multithread
+* ✅ Environnement Docker pour tests et exécution
+* ✅ Simulation d'attaques avec `src/tools/pirate.py`
 
 # Dépendances
 * `python 3.x` et le contenu de `requirements.txt`
@@ -22,14 +22,14 @@ TODO : Lien vers la documentation --> GitHub Pages
 
 * Clonez le dépôt :
 
-```bash
+```
 git clone https://github.com/Sazard/python_security
 cd python_security
 ```
 
 ### Installez les dépendances :
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 Lancer directement `python3 src/main.py --help` pour voir les options.
 
-```bash
+```
 python3 src/main.py --help
 usage: main.py [-h] [-i ip] [-n netmask] [-1 single_ip] [-f output_format] [-a analyse]
 
@@ -69,7 +69,7 @@ Explication des options :
 ## Avec docker
 Pour lancer le projet dans un environnement Docker interactif, exécutez le script `build_and_run.sh` :
 
-```bash
+```
 ./build_and_run.sh
 ... création des environnements réseau et build de l'image ...
 ```
@@ -82,7 +82,7 @@ Cela lancera un shell Bash dans l'image Docker, avec un environnement réseau cr
 ### Utilisation du mode scan de port
 
 **1. Avec docker : lancera un shell interactif dans un docker ayant l'IP 172.18.1.10 dans un réseau dédié**
-```bash
+```
 ./build_and_run.sh
 ... création des environnements réseau et build de l'image ...
 
@@ -109,7 +109,7 @@ python3 src/main.py --single-ip 172.18.1.3 -f <format>
 Les rapports peuvent être générés aux formats nommés "html", "json", "csv" avec l'option "-f", "--format"
 
 **2. Sans docker : lancer le script directement sans docker**
-```bash
+```
 python3 src/main.py --help
 usage: main.py [-h] [-i ip] [-n netmask] [-1 single_ip] [-f output_format] [-a analyse]
 
@@ -135,13 +135,13 @@ python3 src/main.py --single-ip 65.21.239.190 -f <format>
 Lancer dans deux consoles séparées - avec ou sans docker - si docker est utilisé il faut lancer deux instances différentes à partir de la commande `docker run` et changer l'IP, par exemple : 
 
 **1. Lancer un shell interactif automatiquement dans le conteneur 1 avec l'IP 172.18.1.10**
-```bash
+```
 ./build_and_run.sh 
 ... création des environnements réseau et build de l'image ...
 ```
 
 * Première console dans le conteneur 1 (celui lancé avec `build_and_run.sh`):
-```bash
+```
 python3 src/main.py -a "*"
 ```
 
@@ -149,14 +149,14 @@ python3 src/main.py -a "*"
 
 **2. Lancer un shell interactif dans le conteneur 2 avec l'IP 172.18.1.12 en lançant la commande suivante :**
 
-```bash
+```
 docker run -v "$PWD/:/opt/python-securite" --name python-securite2 -it --ip 172.18.1.12 --network test_network python-securite:dev
 ```  
 
 ![image](https://user-images.githubusercontent.com/44167150/231593265-e3e2f653-5e1d-4204-8c98-a611827d7ede.png)
 
 * Deuxième console dans le conteneur 2 (celui lancé avec la commande):
-```bash
+```
 python3 src/tools/pirate.py --target <target> --host <host>
 ```
 
@@ -170,7 +170,7 @@ Cela devrait être ainsi :
 L'avantage d'utiliser le docker est qu'il est directement en `root`.
 
 Utilisation sans docker :
-```bash
+```
 sudo pip install -r requirements.txt # sinon problème d'import python
 sudo python3 src/tools/pirate.py --target <target> --host <host>
 ```
@@ -181,7 +181,7 @@ sudo python3 src/tools/pirate.py --target <target> --host <host>
 
 Pour lancer les tests, exécutez le script `tests/non_interactive_run.sh` :
 
-```bash
+```
 ./tests/non_interactive_run.sh
 ```
 
@@ -191,7 +191,7 @@ Ce script appelle directement `pytest` et effectue le tout dans docker.
 
 La documentation est générée à partir du code Python à l'aide de Sphinx et du thème Read the Docs. Pour générer la documentation, exécutez les commandes suivantes :
 
-```bash
+```
 cd docs
 make html
 ```

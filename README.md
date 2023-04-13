@@ -123,7 +123,7 @@ python3 src/main.py --single-ip 65.21.239.190 -f <format>
 
 Lancer dans deux consoles séparées - avec ou sans docker - si docker est utilisé il faut lancer deux instances différentes à partir de la commande `docker run` et changer l'IP, par exemple : 
 
-**1. lancera un shell interactif dans le conteneur 1 avec l'IP 172.18.1.10**
+**1. Lancer un shell interactif automatiquement dans le conteneur 1 avec l'IP 172.18.1.10**
 ```bash
 ./build_and_run.sh 
 ```
@@ -135,7 +135,7 @@ python3 src/main.py -a "*"
 
 *Le script `main.py` avec le mode "-a" (pour analyse réseau) sera en écoute sur toutes les interfaces réseau de la machine.*
 
-**2. lancera un shell interactif dans le conteneur 2 avec l'IP 172.18.1.12**
+**2. Lancer un shell interactif dans le conteneur 2 avec l'IP 172.18.1.12 en lançant la commande suivante :**
 
 ```bash
 docker run -v "$PWD/:/opt/python-securite" --name python-securite2 -it --ip 172.18.1.12 --network test_network python-securite:dev
@@ -145,18 +145,23 @@ docker run -v "$PWD/:/opt/python-securite" --name python-securite2 -it --ip 172.
 
 * Deuxième console dans le conteneur 2 (celui lancé avec la commande):
 ```bash
-sudo pip install -r requirements.txt # sinon problème d'import python
-sudo python3 src/tools/pirate.py --target <target> --host <host>
+python3 src/tools/pirate.py --target <target> --host <host>
 ```
 
-Le script `pirate.py` génère tout un tas d'attaques qui apparaitrons dans la première console.
+Le script `pirate.py` génère tout un tas d'attaques qui apparaitrons dans la première console. Etant donné que le docker est en `root` il n'y a pas besoin de sudo pour lancer le script d'attaque.
 
 Cela devrait être ainsi :
 
 ![image](https://user-images.githubusercontent.com/44167150/231594159-21b2b501-ca3a-4e21-847c-bcca6e5e2842.png)
 
-Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d'installer les dépendances avec sudo.
+⚠️ Sans docker, il faut simplement lancer deux consoles séparées. Ne pas oublier d'installer les dépendances avec sudo.
 L'avantage d'utiliser le docker est qu'il est directement en `root`.
+
+Utilisation sans docker :
+```bash
+sudo pip install -r requirements.txt # sinon problème d'import python
+sudo python3 src/tools/pirate.py --target <target> --host <host>
+```
 
 ### Tests 
 

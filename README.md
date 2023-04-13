@@ -2,7 +2,7 @@
 
 Python Security est un projet réalisé par notre groupe de 4 étudiants dans le cadre du cours de sécurité Python à l'EPITA. 
 
-TODO : Lien vers la documentation --> GitHub Pages
+Consulter la [==> documentation Sphinx <==](https://sazard.github.io/python_security/_build/html/)
 
 ## Fonctionnalités
 
@@ -194,7 +194,7 @@ cd docs
 make html
 ```
 
-Vous pouvez ensuite accéder à la documentation en ouvrant le fichier `docs/_build/html/index.html` dans votre navigateur ou y accéder via [ce lien à modifier](https://github.com).
+Vous pouvez ensuite accéder à la documentation en ouvrant le fichier `docs/_build/html/index.html` dans votre navigateur ou y accéder via [ce lien](https://sazard.github.io/python_security/_build/html/).
 
 # Jalons
 - Premier jalon (05/04/2023) :

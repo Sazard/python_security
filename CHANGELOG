@@ -1,3 +1,4 @@
 02/04/2023 : ajout d'un parseur et de fichier sources
 07/04/2023 : ajout de tests pour l'énumération réseau et création d'un environnement docker avec docker compose
 12/04/2023 : ajout de documentation pour les fonctions
+13/04/2023 : ajout de la documentation en sphinx dans le dossier docs/_build/html/ et modification du README

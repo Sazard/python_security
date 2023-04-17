@@ -1,4 +1,4 @@
-network*.html
+network_scan_report_*
 *.pyc
 __pycache__/
 venv/

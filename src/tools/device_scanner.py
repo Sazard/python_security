@@ -124,7 +124,6 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                #open_ports = str(device.ports)
                 open_ports = device.matchPorts()
                 writer.writerow([ip, hostname, alias, open_ports])
 
@@ -134,7 +133,6 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                #open_ports = str(device.ports)
                 open_ports = device.matchPorts()
                 data.append({'IP Address': ip, 'Hostname': hostname, 'Alias': alias, 'Open Ports': open_ports})
 
@@ -153,7 +151,6 @@ def create_report(output_format):
                 ip = str(device.ip)
                 hostname = str(device.hostname)
                 alias = str(device.alias)
-                #open_ports = str(device.ports)
                 open_ports = device.matchPorts()
 
                 f.write('<tr><td>' + ip + '</td><td>' + hostname + '</td><td>' +

@@ -70,10 +70,11 @@ class DeviceInfo:
             data = json.load(f)
 
             for p in self.ports:
-                ret += str(p)
+                p_str = str(p)
+                ret += p_str
                 
-                if p <= 1000:
-                    port_name = data[str(p)]['name']
+                if p_str in data:
+                    port_name = data[p_str]['name']
                     if port_name != "":
                         ret += " (" + port_name + ")"
                 ret += ", "

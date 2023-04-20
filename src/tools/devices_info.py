@@ -1,3 +1,5 @@
+import json
+
 all_devices = []
 
 class DeviceInfo:
@@ -54,6 +56,30 @@ class DeviceInfo:
         for d in all_devices:
             if d.alias == val or d.ip == val:
                 return d
+
+    def matchPorts(self):
+        """
+        Returns a string containing open ports along with the matching service usually opened on that port
+
+        :return: A string containing open ports usage information
+        :rtype: str
+        """
+        ret = "["
+        
+        with open('tools/common_ports.json') as f:
+            data = json.load(f)
+
+            for p in self.ports:
+                ret += str(p)
+                
+                if p <= 1000:
+                    port_name = data[str(p)]['name']
+                    if port_name != "":
+                        ret += " (" + port_name + ")"
+                ret += ", "
+
+        return ret[:-2] + "]"
+            
     
     def __str__(self):
         """
@@ -62,4 +88,6 @@ class DeviceInfo:
         :return: A string representation of the device's information.
         :rtype: str
         """
-        return f"IP Address: {self.ip}\nAlias: {self.alias}\nHostname: {self.hostname}\nOpen Ports: {self.ports}\n"
+        ports = self.matchPorts()
+
+        return f"IP Address: {self.ip}\nAlias: {self.alias}\nHostname: {self.hostname}\nOpen Ports: {ports}\n"

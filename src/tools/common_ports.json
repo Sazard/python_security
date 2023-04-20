@@ -1,0 +1,2846 @@
+{
+  "0": {
+    "name": "",
+    "description": "Reserved"
+  },
+  "1": {
+    "name": "tcpmux",
+    "description": "TCP Port Service Multiplexer"
+  },
+  "2": {
+    "name": "compressnet",
+    "description": "Management Utility"
+  },
+  "3": {
+    "name": "compressnet",
+    "description": "Compression Process"
+  },
+  "4": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "5": {
+    "name": "rje",
+    "description": "Remote Job Entry"
+  },
+  "6": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "7": {
+    "name": "echo",
+    "description": "Echo"
+  },
+  "8": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "9": {
+    "name": "discard",
+    "description": "Discard"
+  },
+  "9/sctp": {
+    "name": "discard",
+    "description": "Discard"
+  },
+  "9/dccp": {
+    "name": "discard",
+    "description": "Discard"
+  },
+  "10": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "11": {
+    "name": "systat",
+    "description": "Active Users"
+  },
+  "12": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "13": {
+    "name": "daytime",
+    "description": "Daytime"
+  },
+  "14": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "15": {
+    "name": "",
+    "description": "Unassigned [was netstat]"
+  },
+  "16": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "17": {
+    "name": "qotd",
+    "description": "Quote of the Day"
+  },
+  "18": {
+    "name": "msp",
+    "description": "Message Send Protocol (historic)"
+  },
+  "19": {
+    "name": "chargen",
+    "description": "Character Generator"
+  },
+  "20": {
+    "name": "ftp-data",
+    "description": "File Transfer [Default Data]"
+  },
+  "20/sctp": {
+    "name": "ftp-data",
+    "description": "FTP"
+  },
+  "21": {
+    "name": "ftp",
+    "description": "File Transfer Protocol [Control]"
+  },
+  "21/sctp": {
+    "name": "ftp",
+    "description": "FTP"
+  },
+  "22": {
+    "name": "ssh",
+    "description": "The Secure Shell (SSH) Protocol"
+  },
+  "22/sctp": {
+    "name": "ssh",
+    "description": "SSH"
+  },
+  "23": {
+    "name": "telnet",
+    "description": "Telnet"
+  },
+  "24": {
+    "name": "",
+    "description": "any private mail system"
+  },
+  "25": {
+    "name": "smtp",
+    "description": "Simple Mail Transfer"
+  },
+  "26": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "27": {
+    "name": "nsw-fe",
+    "description": "NSW User System FE"
+  },
+  "28": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "29": {
+    "name": "msg-icp",
+    "description": "MSG ICP"
+  },
+  "30": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "31": {
+    "name": "msg-auth",
+    "description": "MSG Authentication"
+  },
+  "32": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "33": {
+    "name": "dsp",
+    "description": "Display Support Protocol"
+  },
+  "34": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "35": {
+    "name": "",
+    "description": "any private printer server"
+  },
+  "36": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "37": {
+    "name": "time",
+    "description": "Time"
+  },
+  "38": {
+    "name": "rap",
+    "description": "Route Access Protocol"
+  },
+  "39": {
+    "name": "rlp",
+    "description": "Resource Location Protocol"
+  },
+  "40": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "41": {
+    "name": "graphics",
+    "description": "Graphics"
+  },
+  "42": {
+    "name": "name",
+    "description": "Host Name Server"
+  },
+  "43": {
+    "name": "nicname",
+    "description": "Who Is"
+  },
+  "44": {
+    "name": "mpm-flags",
+    "description": "MPM FLAGS Protocol"
+  },
+  "45": {
+    "name": "mpm",
+    "description": "Message Processing Module [recv]"
+  },
+  "46": {
+    "name": "mpm-snd",
+    "description": "MPM [default send]"
+  },
+  "47": {
+    "name": "",
+    "description": "Reserved"
+  },
+  "48": {
+    "name": "auditd",
+    "description": "Digital Audit Daemon"
+  },
+  "49": {
+    "name": "tacacs",
+    "description": "Login Host Protocol (TACACS)"
+  },
+  "50": {
+    "name": "re-mail-ck",
+    "description": "Remote Mail Checking Protocol"
+  },
+  "52": {
+    "name": "xns-time",
+    "description": "XNS Time Protocol"
+  },
+  "53": {
+    "name": "domain",
+    "description": "Domain Name Server"
+  },
+  "54": {
+    "name": "xns-ch",
+    "description": "XNS Clearinghouse"
+  },
+  "55": {
+    "name": "isi-gl",
+    "description": "ISI Graphics Language"
+  },
+  "56": {
+    "name": "xns-auth",
+    "description": "XNS Authentication"
+  },
+  "57": {
+    "name": "",
+    "description": "any private terminal access"
+  },
+  "58": {
+    "name": "xns-mail",
+    "description": "XNS Mail"
+  },
+  "59": {
+    "name": "",
+    "description": "any private file service"
+  },
+  "60": {
+    "name": "",
+    "description": "Unassigned"
+  },
+  "61": {
+    "name": "",
+    "description": "Reserved"
+  },
+  "62": {
+    "name": "acas",
+    "description": "ACA Services"
+  },
+  "63": {
+    "name": "whoispp",
+    "description": "whois++ IANA assigned this well-formed service name as a replacement for \"whois++\"."
+  },
+  "64": {
+    "name": "covia",
+    "description": "Communications Integrator (CI)"
+  },
+  "65": {
+    "name": "tacacs-ds",
+    "description": "TACACS-Database Service"
+  },
+  "66": {
+    "name": "sql-net",
+    "description": "Oracle SQL*NET IANA assigned this well-formed service name as a replacement for \"sql*net\"."
+  },
+  "67": {
+    "name": "bootps",
+    "description": "Bootstrap Protocol Server"
+  },
+  "68": {
+    "name": "bootpc",
+    "description": "Bootstrap Protocol Client"
+  },
+  "69": {
+    "name": "tftp",
+    "description": "Trivial File Transfer"
+  },
+  "70": {
+    "name": "gopher",
+    "description": "Gopher"
+  },
+  "71": {
+    "name": "netrjs-1",
+    "description": "Remote Job Service"
+  },
+  "72": {
+    "name": "netrjs-2",
+    "description": "Remote Job Service"
+  },
+  "73": {
+    "name": "netrjs-3",
+    "description": "Remote Job Service"
+  },
+  "74": {
+    "name": "netrjs-4",
+    "description": "Remote Job Service"
+  },
+  "75": {
+    "name": "",
+    "description": "any private dial out service"
+  },
+  "76": {
+    "name": "deos",
+    "description": "Distributed External Object Store"
+  },
+  "77": {
+    "name": "",
+    "description": "any private RJE service"
+  },
+  "78": {
+    "name": "vettcp",
+    "description": "vettcp"
+  },
+  "79": {
+    "name": "finger",
+    "description": "Finger"
+  },
+  "80": {
+    "name": "http",
+    "description": "World Wide Web HTTP"
+  },
+  "80/sctp": {
+    "name": "http",
+    "description": "HTTP"
+  },
+  "82": {
+    "name": "xfer",
+    "description": "XFER Utility"
+  },
+  "83": {
+    "name": "mit-ml-dev",
+    "description": "MIT ML Device"
+  },
+  "84": {
+    "name": "ctf",
+    "description": "Common Trace Facility"
+  },
+  "85": {
+    "name": "mit-ml-dev",
+    "description": "MIT ML Device"
+  },
+  "86": {
+    "name": "mfcobol",
+    "description": "Micro Focus Cobol"
+  },
+  "87": {
+    "name": "",
+    "description": "any private terminal link"
+  },
+  "88": {
+    "name": "kerberos",
+    "description": "Kerberos"
+  },
+  "89": {
+    "name": "su-mit-tg",
+    "description": "SU/MIT Telnet Gateway"
+  },
+  "90": {
+    "name": "dnsix",
+    "description": "DNSIX Securit Attribute Token Map"
+  },
+  "91": {
+    "name": "mit-dov",
+    "description": "MIT Dover Spooler"
+  },
+  "92": {
+    "name": "npp",
+    "description": "Network Printing Protocol"
+  },
+  "93": {
+    "name": "dcp",
+    "description": "Device Control Protocol"
+  },
+  "94": {
+    "name": "objcall",
+    "description": "Tivoli Object Dispatcher"
+  },
+  "95": {
+    "name": "supdup",
+    "description": "SUPDUP"
+  },
+  "96": {
+    "name": "dixie",
+    "description": "DIXIE Protocol Specification"
+  },
+  "97": {
+    "name": "swift-rvf",
+    "description": "Swift Remote Virtural File Protocol"
+  },
+  "98": {
+    "name": "tacnews",
+    "description": "TAC News"
+  },
+  "99": {
+    "name": "metagram",
+    "description": "Metagram Relay"
+  },
+  "101": {
+    "name": "hostname",
+    "description": "NIC Host Name Server"
+  },
+  "102": {
+    "name": "iso-tsap",
+    "description": "ISO-TSAP Class 0"
+  },
+  "103": {
+    "name": "gppitnp",
+    "description": "Genesis Point-to-Point Trans Net"
+  },
+  "104": {
+    "name": "acr-nema",
+    "description": "ACR-NEMA Digital Imag. & Comm. 300"
+  },
+  "105": {
+    "name": "cso",
+    "description": "CCSO name server protocol"
+  },
+  "106": {
+    "name": "3com-tsmux",
+    "description": "3COM-TSMUX"
+  },
+  "107": {
+    "name": "rtelnet",
+    "description": "Remote Telnet Service"
+  },
+  "108": {
+    "name": "snagas",
+    "description": "SNA Gateway Access Server"
+  },
+  "109": {
+    "name": "pop2",
+    "description": "Post Office Protocol - Version 2"
+  },
+  "110": {
+    "name": "pop3",
+    "description": "Post Office Protocol - Version 3"
+  },
+  "111": {
+    "name": "sunrpc",
+    "description": "SUN Remote Procedure Call"
+  },
+  "112": {
+    "name": "mcidas",
+    "description": "McIDAS Data Transmission Protocol"
+  },
+  "113": {
+    "name": "ident"
+  },
+  "115": {
+    "name": "sftp",
+    "description": "Simple File Transfer Protocol"
+  },
+  "116": {
+    "name": "ansanotify",
+    "description": "ANSA REX Notify"
+  },
+  "117": {
+    "name": "uucp-path",
+    "description": "UUCP Path Service"
+  },
+  "118": {
+    "name": "sqlserv",
+    "description": "SQL Services"
+  },
+  "119": {
+    "name": "nntp",
+    "description": "Network News Transfer Protocol"
+  },
+  "120": {
+    "name": "cfdptkt",
+    "description": "CFDPTKT"
+  },
+  "121": {
+    "name": "erpc",
+    "description": "Encore Expedited Remote Pro.Call"
+  },
+  "122": {
+    "name": "smakynet",
+    "description": "SMAKYNET"
+  },
+  "123": {
+    "name": "ntp",
+    "description": "Network Time Protocol"
+  },
+  "124": {
+    "name": "ansatrader",
+    "description": "ANSA REX Trader"
+  },
+  "125": {
+    "name": "locus-map",
+    "description": "Locus PC-Interface Net Map Ser"
+  },
+  "126": {
+    "name": "nxedit",
+    "description": "NXEdit"
+  },
+  "127": {
+    "name": "locus-con",
+    "description": "Locus PC-Interface Conn Server"
+  },
+  "128": {
+    "name": "gss-xlicen",
+    "description": "GSS X License Verification"
+  },
+  "129": {
+    "name": "pwdgen",
+    "description": "Password Generator Protocol"
+  },
+  "130": {
+    "name": "cisco-fna",
+    "description": "cisco FNATIVE"
+  },
+  "131": {
+    "name": "cisco-tna",
+    "description": "cisco TNATIVE"
+  },
+  "132": {
+    "name": "cisco-sys",
+    "description": "cisco SYSMAINT"
+  },
+  "133": {
+    "name": "statsrv",
+    "description": "Statistics Service"
+  },
+  "134": {
+    "name": "ingres-net",
+    "description": "INGRES-NET Service"
+  },
+  "135": {
+    "name": "epmap",
+    "description": "DCE endpoint resolution"
+  },
+  "136": {
+    "name": "profile",
+    "description": "PROFILE Naming System"
+  },
+  "137": {
+    "name": "netbios-ns",
+    "description": "NETBIOS Name Service"
+  },
+  "138": {
+    "name": "netbios-dgm",
+    "description": "NETBIOS Datagram Service"
+  },
+  "139": {
+    "name": "netbios-ssn",
+    "description": "NETBIOS Session Service"
+  },
+  "140": {
+    "name": "emfis-data",
+    "description": "EMFIS Data Service"
+  },
+  "141": {
+    "name": "emfis-cntl",
+    "description": "EMFIS Control Service"
+  },
+  "142": {
+    "name": "bl-idm",
+    "description": "Britton-Lee IDM"
+  },
+  "143": {
+    "name": "imap",
+    "description": "Internet Message Access Protocol"
+  },
+  "144": {
+    "name": "uma",
+    "description": "Universal Management Architecture"
+  },
+  "145": {
+    "name": "uaac",
+    "description": "UAAC Protocol"
+  },
+  "146": {
+    "name": "iso-tp0",
+    "description": "ISO-IP0"
+  },
+  "147": {
+    "name": "iso-ip",
+    "description": "ISO-IP"
+  },
+  "148": {
+    "name": "jargon",
+    "description": "Jargon"
+  },
+  "149": {
+    "name": "aed-512",
+    "description": "AED 512 Emulation Service"
+  },
+  "150": {
+    "name": "sql-net",
+    "description": "SQL-NET"
+  },
+  "151": {
+    "name": "hems",
+    "description": "HEMS"
+  },
+  "152": {
+    "name": "bftp",
+    "description": "Background File Transfer Program"
+  },
+  "153": {
+    "name": "sgmp",
+    "description": "SGMP"
+  },
+  "154": {
+    "name": "netsc-prod",
+    "description": "NETSC"
+  },
+  "155": {
+    "name": "netsc-dev",
+    "description": "NETSC"
+  },
+  "156": {
+    "name": "sqlsrv",
+    "description": "SQL Service"
+  },
+  "157": {
+    "name": "knet-cmp",
+    "description": "KNET/VM Command/Message Protocol"
+  },
+  "158": {
+    "name": "pcmail-srv",
+    "description": "PCMail Server"
+  },
+  "159": {
+    "name": "nss-routing",
+    "description": "NSS-Routing"
+  },
+  "160": {
+    "name": "sgmp-traps",
+    "description": "SGMP-TRAPS"
+  },
+  "161": {
+    "name": "snmp",
+    "description": "SNMP"
+  },
+  "162": {
+    "name": "snmptrap",
+    "description": "SNMPTRAP"
+  },
+  "163": {
+    "name": "cmip-man",
+    "description": "CMIP Manager"
+  },
+  "164": {
+    "name": "cmip-agent",
+    "description": "CMIP Agent"
+  },
+  "165": {
+    "name": "xns-courier",
+    "description": "Xerox"
+  },
+  "166": {
+    "name": "s-net",
+    "description": "Sirius Systems"
+  },
+  "167": {
+    "name": "namp",
+    "description": "NAMP"
+  },
+  "168": {
+    "name": "rsvd",
+    "description": "RSVD"
+  },
+  "169": {
+    "name": "send",
+    "description": "SEND"
+  },
+  "170": {
+    "name": "print-srv",
+    "description": "Network PostScript"
+  },
+  "171": {
+    "name": "multiplex",
+    "description": "Network Innovations Multiplex"
+  },
+  "172": {
+    "name": "cl-1",
+    "description": "Network Innovations CL/1 IANA assigned this well-formed service name as a replacement for \"cl/1\"."
+  },
+  "173": {
+    "name": "xyplex-mux",
+    "description": "Xyplex"
+  },
+  "174": {
+    "name": "mailq",
+    "description": "MAILQ"
+  },
+  "175": {
+    "name": "vmnet",
+    "description": "VMNET"
+  },
+  "176": {
+    "name": "genrad-mux",
+    "description": "GENRAD-MUX"
+  },
+  "177": {
+    "name": "xdmcp",
+    "description": "X Display Manager Control Protocol"
+  },
+  "178": {
+    "name": "nextstep",
+    "description": "NextStep Window Server"
+  },
+  "179": {
+    "name": "bgp",
+    "description": "Border Gateway Protocol"
+  },
+  "179/sctp": {
+    "name": "bgp",
+    "description": "BGP"
+  },
+  "180": {
+    "name": "ris",
+    "description": "Intergraph"
+  },
+  "181": {
+    "name": "unify",
+    "description": "Unify"
+  },
+  "182": {
+    "name": "audit",
+    "description": "Unisys Audit SITP"
+  },
+  "183": {
+    "name": "ocbinder",
+    "description": "OCBinder"
+  },
+  "184": {
+    "name": "ocserver",
+    "description": "OCServer"
+  },
+  "185": {
+    "name": "remote-kis",
+    "description": "Remote-KIS"
+  },
+  "186": {
+    "name": "kis",
+    "description": "KIS Protocol"
+  },
+  "187": {
+    "name": "aci",
+    "description": "Application Communication Interface"
+  },
+  "188": {
+    "name": "mumps",
+    "description": "Plus Five's MUMPS"
+  },
+  "189": {
+    "name": "qft",
+    "description": "Queued File Transport"
+  },
+  "190": {
+    "name": "gacp",
+    "description": "Gateway Access Control Protocol"
+  },
+  "191": {
+    "name": "prospero",
+    "description": "Prospero Directory Service"
+  },
+  "192": {
+    "name": "osu-nms",
+    "description": "OSU Network Monitoring System"
+  },
+  "193": {
+    "name": "srmp",
+    "description": "Spider Remote Monitoring Protocol"
+  },
+  "194": {
+    "name": "irc",
+    "description": "Internet Relay Chat Protocol"
+  },
+  "195": {
+    "name": "dn6-nlm-aud",
+    "description": "DNSIX Network Level Module Audit"
+  },
+  "196": {
+    "name": "dn6-smm-red",
+    "description": "DNSIX Session Mgt Module Audit Redir"
+  },
+  "197": {
+    "name": "dls",
+    "description": "Directory Location Service"
+  },
+  "198": {
+    "name": "dls-mon",
+    "description": "Directory Location Service Monitor"
+  },
+  "199": {
+    "name": "smux",
+    "description": "SMUX"
+  },
+  "200": {
+    "name": "src",
+    "description": "IBM System Resource Controller"
+  },
+  "201": {
+    "name": "at-rtmp",
+    "description": "AppleTalk Routing Maintenance"
+  },
+  "202": {
+    "name": "at-nbp",
+    "description": "AppleTalk Name Binding"
+  },
+  "203": {
+    "name": "at-3",
+    "description": "AppleTalk Unused"
+  },
+  "204": {
+    "name": "at-echo",
+    "description": "AppleTalk Echo"
+  },
+  "205": {
+    "name": "at-5",
+    "description": "AppleTalk Unused"
+  },
+  "206": {
+    "name": "at-zis",
+    "description": "AppleTalk Zone Information"
+  },
+  "207": {
+    "name": "at-7",
+    "description": "AppleTalk Unused"
+  },
+  "208": {
+    "name": "at-8",
+    "description": "AppleTalk Unused"
+  },
+  "209": {
+    "name": "qmtp",
+    "description": "The Quick Mail Transfer Protocol"
+  },
+  "210": {
+    "name": "z39-50",
+    "description": "ANSI Z39.50 IANA assigned this well-formed service name as a replacement for \"z39.50\"."
+  },
+  "211": {
+    "name": "914c-g",
+    "description": "Texas Instruments 914C/G Terminal IANA assigned this well-formed service name as a replacement for \"914c/g\"."
+  },
+  "212": {
+    "name": "anet",
+    "description": "ATEXSSTR"
+  },
+  "213": {
+    "name": "ipx",
+    "description": "IPX"
+  },
+  "214": {
+    "name": "vmpwscs",
+    "description": "VM PWSCS"
+  },
+  "215": {
+    "name": "softpc",
+    "description": "Insignia Solutions"
+  },
+  "216": {
+    "name": "CAIlic",
+    "description": "Computer Associates Int'l License Server"
+  },
+  "217": {
+    "name": "dbase",
+    "description": "dBASE Unix"
+  },
+  "218": {
+    "name": "mpp",
+    "description": "Netix Message Posting Protocol"
+  },
+  "219": {
+    "name": "uarps",
+    "description": "Unisys ARPs"
+  },
+  "220": {
+    "name": "imap3",
+    "description": "Interactive Mail Access Protocol v3"
+  },
+  "221": {
+    "name": "fln-spx",
+    "description": "Berkeley rlogind with SPX auth"
+  },
+  "222": {
+    "name": "rsh-spx",
+    "description": "Berkeley rshd with SPX auth"
+  },
+  "223": {
+    "name": "cdc",
+    "description": "Certificate Distribution Center"
+  },
+  "224": {
+    "name": "masqdialer",
+    "description": "masqdialer"
+  },
+  "242": {
+    "name": "direct",
+    "description": "Direct"
+  },
+  "243": {
+    "name": "sur-meas",
+    "description": "Survey Measurement"
+  },
+  "244": {
+    "name": "inbusiness",
+    "description": "inbusiness"
+  },
+  "245": {
+    "name": "link",
+    "description": "LINK"
+  },
+  "246": {
+    "name": "dsp3270",
+    "description": "Display Systems Protocol"
+  },
+  "247": {
+    "name": "subntbcst-tftp",
+    "description": "SUBNTBCST_TFTP IANA assigned this well-formed service name as a replacement for \"subntbcst_tftp\"."
+  },
+  "248": {
+    "name": "bhfhs",
+    "description": "bhfhs"
+  },
+  "256": {
+    "name": "rap",
+    "description": "RAP"
+  },
+  "257": {
+    "name": "set",
+    "description": "Secure Electronic Transaction"
+  },
+  "259": {
+    "name": "esro-gen",
+    "description": "Efficient Short Remote Operations"
+  },
+  "260": {
+    "name": "openport",
+    "description": "Openport"
+  },
+  "261": {
+    "name": "nsiiops",
+    "description": "IIOP Name Service over TLS/SSL"
+  },
+  "262": {
+    "name": "arcisdms",
+    "description": "Arcisdms"
+  },
+  "263": {
+    "name": "hdap",
+    "description": "HDAP"
+  },
+  "264": {
+    "name": "bgmp",
+    "description": "BGMP"
+  },
+  "265": {
+    "name": "x-bone-ctl",
+    "description": "X-Bone CTL"
+  },
+  "266": {
+    "name": "sst",
+    "description": "SCSI on ST"
+  },
+  "267": {
+    "name": "td-service",
+    "description": "Tobit David Service Layer"
+  },
+  "268": {
+    "name": "td-replica",
+    "description": "Tobit David Replica"
+  },
+  "269": {
+    "name": "manet",
+    "description": "MANET Protocols"
+  },
+  "270": {
+    "name": "",
+    "description": "Reserved"
+  },
+  "271": {
+    "name": "pt-tls",
+    "description": "IETF Network Endpoint Assessment (NEA) Posture Transport Protocol over TLS (PT-TLS)"
+  },
+  "280": {
+    "name": "http-mgmt",
+    "description": "http-mgmt"
+  },
+  "281": {
+    "name": "personal-link",
+    "description": "Personal Link"
+  },
+  "282": {
+    "name": "cableport-ax",
+    "description": "Cable Port A/X"
+  },
+  "283": {
+    "name": "rescap",
+    "description": "rescap"
+  },
+  "284": {
+    "name": "corerjd",
+    "description": "corerjd"
+  },
+  "286": {
+    "name": "fxp",
+    "description": "FXP Communication"
+  },
+  "287": {
+    "name": "k-block",
+    "description": "K-BLOCK"
+  },
+  "308": {
+    "name": "novastorbakcup",
+    "description": "Novastor Backup"
+  },
+  "309": {
+    "name": "entrusttime",
+    "description": "EntrustTime"
+  },
+  "310": {
+    "name": "bhmds",
+    "description": "bhmds"
+  },
+  "311": {
+    "name": "asip-webadmin",
+    "description": "AppleShare IP WebAdmin"
+  },
+  "312": {
+    "name": "vslmp",
+    "description": "VSLMP"
+  },
+  "313": {
+    "name": "magenta-logic",
+    "description": "Magenta Logic"
+  },
+  "314": {
+    "name": "opalis-robot",
+    "description": "Opalis Robot"
+  },
+  "315": {
+    "name": "dpsi",
+    "description": "DPSI"
+  },
+  "316": {
+    "name": "decauth",
+    "description": "decAuth"
+  },
+  "317": {
+    "name": "zannet",
+    "description": "Zannet"
+  },
+  "318": {
+    "name": "pkix-timestamp",
+    "description": "PKIX TimeStamp"
+  },
+  "319": {
+    "name": "ptp-event",
+    "description": "PTP Event"
+  },
+  "320": {
+    "name": "ptp-general",
+    "description": "PTP General"
+  },
+  "321": {
+    "name": "pip",
+    "description": "PIP"
+  },
+  "322": {
+    "name": "rtsps",
+    "description": "RTSPS"
+  },
+  "323": {
+    "name": "rpki-rtr",
+    "description": "Resource PKI to Router Protocol"
+  },
+  "324": {
+    "name": "rpki-rtr-tls",
+    "description": "Resource PKI to Router Protocol over TLS"
+  },
+  "333": {
+    "name": "texar",
+    "description": "Texar Security Port"
+  },
+  "344": {
+    "name": "pdap",
+    "description": "Prospero Data Access Protocol"
+  },
+  "345": {
+    "name": "pawserv",
+    "description": "Perf Analysis Workbench"
+  },
+  "346": {
+    "name": "zserv",
+    "description": "Zebra server"
+  },
+  "347": {
+    "name": "fatserv",
+    "description": "Fatmen Server"
+  },
+  "348": {
+    "name": "csi-sgwp",
+    "description": "Cabletron Management Protocol"
+  },
+  "349": {
+    "name": "mftp",
+    "description": "mftp"
+  },
+  "350": {
+    "name": "matip-type-a",
+    "description": "MATIP Type A"
+  },
+  "351": {
+    "name": "matip-type-b",
+    "description": "MATIP Type B"
+  },
+  "352": {
+    "name": "dtag-ste-sb",
+    "description": "DTAG"
+  },
+  "353": {
+    "name": "ndsauth",
+    "description": "NDSAUTH"
+  },
+  "354": {
+    "name": "bh611",
+    "description": "bh611"
+  },
+  "355": {
+    "name": "datex-asn",
+    "description": "DATEX-ASN"
+  },
+  "356": {
+    "name": "cloanto-net-1",
+    "description": "Cloanto Net 1"
+  },
+  "357": {
+    "name": "bhevent",
+    "description": "bhevent"
+  },
+  "358": {
+    "name": "shrinkwrap",
+    "description": "Shrinkwrap"
+  },
+  "359": {
+    "name": "nsrmp",
+    "description": "Network Security Risk Management Protocol"
+  },
+  "360": {
+    "name": "scoi2odialog",
+    "description": "scoi2odialog"
+  },
+  "361": {
+    "name": "semantix",
+    "description": "Semantix"
+  },
+  "362": {
+    "name": "srssend",
+    "description": "SRS Send"
+  },
+  "363": {
+    "name": "rsvp-tunnel",
+    "description": "RSVP Tunnel IANA assigned this well-formed service name as a replacement for \"rsvp_tunnel\"."
+  },
+  "364": {
+    "name": "aurora-cmgr",
+    "description": "Aurora CMGR"
+  },
+  "365": {
+    "name": "dtk",
+    "description": "DTK"
+  },
+  "366": {
+    "name": "odmr",
+    "description": "ODMR"
+  },
+  "367": {
+    "name": "mortgageware",
+    "description": "MortgageWare"
+  },
+  "368": {
+    "name": "qbikgdp",
+    "description": "QbikGDP"
+  },
+  "369": {
+    "name": "rpc2portmap",
+    "description": "rpc2portmap"
+  },
+  "370": {
+    "name": "codaauth2",
+    "description": "codaauth2"
+  },
+  "371": {
+    "name": "clearcase",
+    "description": "Clearcase"
+  },
+  "372": {
+    "name": "ulistproc",
+    "description": "ListProcessor"
+  },
+  "373": {
+    "name": "legent-1",
+    "description": "Legent Corporation"
+  },
+  "374": {
+    "name": "legent-2",
+    "description": "Legent Corporation"
+  },
+  "375": {
+    "name": "hassle",
+    "description": "Hassle"
+  },
+  "376": {
+    "name": "nip",
+    "description": "Amiga Envoy Network Inquiry Proto"
+  },
+  "377": {
+    "name": "tnETOS",
+    "description": "NEC Corporation"
+  },
+  "378": {
+    "name": "dsETOS",
+    "description": "NEC Corporation"
+  },
+  "379": {
+    "name": "is99c",
+    "description": "TIA/EIA/IS-99 modem client"
+  },
+  "380": {
+    "name": "is99s",
+    "description": "TIA/EIA/IS-99 modem server"
+  },
+  "381": {
+    "name": "hp-collector",
+    "description": "hp performance data collector"
+  },
+  "382": {
+    "name": "hp-managed-node",
+    "description": "hp performance data managed node"
+  },
+  "383": {
+    "name": "hp-alarm-mgr",
+    "description": "hp performance data alarm manager"
+  },
+  "384": {
+    "name": "arns",
+    "description": "A Remote Network Server System"
+  },
+  "385": {
+    "name": "ibm-app",
+    "description": "IBM Application"
+  },
+  "386": {
+    "name": "asa",
+    "description": "ASA Message Router Object Def."
+  },
+  "387": {
+    "name": "aurp",
+    "description": "Appletalk Update-Based Routing Pro."
+  },
+  "388": {
+    "name": "unidata-ldm",
+    "description": "Unidata LDM"
+  },
+  "389": {
+    "name": "ldap",
+    "description": "Lightweight Directory Access Protocol"
+  },
+  "390": {
+    "name": "uis",
+    "description": "UIS"
+  },
+  "391": {
+    "name": "synotics-relay",
+    "description": "SynOptics SNMP Relay Port"
+  },
+  "392": {
+    "name": "synotics-broker",
+    "description": "SynOptics Port Broker Port"
+  },
+  "393": {
+    "name": "meta5",
+    "description": "Meta5"
+  },
+  "394": {
+    "name": "embl-ndt",
+    "description": "EMBL Nucleic Data Transfer"
+  },
+  "395": {
+    "name": "netcp",
+    "description": "NetScout Control Protocol"
+  },
+  "396": {
+    "name": "netware-ip",
+    "description": "Novell Netware over IP"
+  },
+  "397": {
+    "name": "mptn",
+    "description": "Multi Protocol Trans. Net."
+  },
+  "398": {
+    "name": "kryptolan",
+    "description": "Kryptolan"
+  },
+  "399": {
+    "name": "iso-tsap-c2",
+    "description": "ISO Transport Class 2 Non-Control over TCP"
+  },
+  "400": {
+    "name": "osb-sd",
+    "description": "Oracle Secure Backup"
+  },
+  "401": {
+    "name": "ups",
+    "description": "Uninterruptible Power Supply"
+  },
+  "402": {
+    "name": "genie",
+    "description": "Genie Protocol"
+  },
+  "403": {
+    "name": "decap",
+    "description": "decap"
+  },
+  "404": {
+    "name": "nced",
+    "description": "nced"
+  },
+  "405": {
+    "name": "ncld",
+    "description": "ncld"
+  },
+  "406": {
+    "name": "imsp",
+    "description": "Interactive Mail Support Protocol"
+  },
+  "407": {
+    "name": "timbuktu",
+    "description": "Timbuktu"
+  },
+  "408": {
+    "name": "prm-sm",
+    "description": "Prospero Resource Manager Sys. Man."
+  },
+  "409": {
+    "name": "prm-nm",
+    "description": "Prospero Resource Manager Node Man."
+  },
+  "410": {
+    "name": "decladebug",
+    "description": "DECLadebug Remote Debug Protocol"
+  },
+  "411": {
+    "name": "rmt",
+    "description": "Remote MT Protocol"
+  },
+  "412": {
+    "name": "synoptics-trap",
+    "description": "Trap Convention Port"
+  },
+  "413": {
+    "name": "smsp",
+    "description": "Storage Management Services Protocol"
+  },
+  "414": {
+    "name": "infoseek",
+    "description": "InfoSeek"
+  },
+  "415": {
+    "name": "bnet",
+    "description": "BNet"
+  },
+  "416": {
+    "name": "silverplatter",
+    "description": "Silverplatter"
+  },
+  "417": {
+    "name": "onmux",
+    "description": "Onmux"
+  },
+  "418": {
+    "name": "hyper-g",
+    "description": "Hyper-G"
+  },
+  "419": {
+    "name": "ariel1",
+    "description": "Ariel 1"
+  },
+  "420": {
+    "name": "smpte",
+    "description": "SMPTE"
+  },
+  "421": {
+    "name": "ariel2",
+    "description": "Ariel 2"
+  },
+  "422": {
+    "name": "ariel3",
+    "description": "Ariel 3"
+  },
+  "423": {
+    "name": "opc-job-start",
+    "description": "IBM Operations Planning and Control Start"
+  },
+  "424": {
+    "name": "opc-job-track",
+    "description": "IBM Operations Planning and Control Track"
+  },
+  "425": {
+    "name": "icad-el",
+    "description": "ICAD"
+  },
+  "426": {
+    "name": "smartsdp",
+    "description": "smartsdp"
+  },
+  "427": {
+    "name": "svrloc",
+    "description": "Server Location"
+  },
+  "428": {
+    "name": "ocs-cmu",
+    "description": "OCS_CMU IANA assigned this well-formed service name as a replacement for \"ocs_cmu\"."
+  },
+  "429": {
+    "name": "ocs-amu",
+    "description": "OCS_AMU IANA assigned this well-formed service name as a replacement for \"ocs_amu\"."
+  },
+  "430": {
+    "name": "utmpsd",
+    "description": "UTMPSD"
+  },
+  "431": {
+    "name": "utmpcd",
+    "description": "UTMPCD"
+  },
+  "432": {
+    "name": "iasd",
+    "description": "IASD"
+  },
+  "433": {
+    "name": "nnsp",
+    "description": "NNTP for transit servers (NNSP)"
+  },
+  "434": {
+    "name": "mobileip-agent",
+    "description": "MobileIP-Agent"
+  },
+  "435": {
+    "name": "mobilip-mn",
+    "description": "MobilIP-MN"
+  },
+  "436": {
+    "name": "dna-cml",
+    "description": "DNA-CML"
+  },
+  "437": {
+    "name": "comscm",
+    "description": "comscm"
+  },
+  "438": {
+    "name": "dsfgw",
+    "description": "dsfgw"
+  },
+  "439": {
+    "name": "dasp",
+    "description": "dasp"
+  },
+  "440": {
+    "name": "sgcp",
+    "description": "sgcp"
+  },
+  "441": {
+    "name": "decvms-sysmgt",
+    "description": "decvms-sysmgt"
+  },
+  "442": {
+    "name": "cvc-hostd",
+    "description": "cvc_hostd IANA assigned this well-formed service name as a replacement for \"cvc_hostd\"."
+  },
+  "443": {
+    "name": "https",
+    "description": "http protocol over TLS/SSL"
+  },
+  "443/sctp": {
+    "name": "https",
+    "description": "HTTPS"
+  },
+  "444": {
+    "name": "snpp",
+    "description": "Simple Network Paging Protocol"
+  },
+  "445": {
+    "name": "microsoft-ds",
+    "description": "Microsoft-DS"
+  },
+  "446": {
+    "name": "ddm-rdb",
+    "description": "DDM-Remote Relational Database Access"
+  },
+  "447": {
+    "name": "ddm-dfm",
+    "description": "DDM-Distributed File Management"
+  },
+  "448": {
+    "name": "ddm-ssl",
+    "description": "DDM-Remote DB Access Using Secure Sockets"
+  },
+  "449": {
+    "name": "as-servermap",
+    "description": "AS Server Mapper"
+  },
+  "450": {
+    "name": "tserver",
+    "description": "Computer Supported Telecomunication Applications"
+  },
+  "451": {
+    "name": "sfs-smp-net",
+    "description": "Cray Network Semaphore server"
+  },
+  "452": {
+    "name": "sfs-config",
+    "description": "Cray SFS config server"
+  },
+  "453": {
+    "name": "creativeserver",
+    "description": "CreativeServer"
+  },
+  "454": {
+    "name": "contentserver",
+    "description": "ContentServer"
+  },
+  "455": {
+    "name": "creativepartnr",
+    "description": "CreativePartnr"
+  },
+  "456": {
+    "name": "macon-tcp",
+    "description": "macon-tcp"
+  },
+  "457": {
+    "name": "scohelp",
+    "description": "scohelp"
+  },
+  "458": {
+    "name": "appleqtc",
+    "description": "apple quick time"
+  },
+  "459": {
+    "name": "ampr-rcmd",
+    "description": "ampr-rcmd"
+  },
+  "460": {
+    "name": "skronk",
+    "description": "skronk"
+  },
+  "461": {
+    "name": "datasurfsrv",
+    "description": "DataRampSrv"
+  },
+  "462": {
+    "name": "datasurfsrvsec",
+    "description": "DataRampSrvSec"
+  },
+  "463": {
+    "name": "alpes",
+    "description": "alpes"
+  },
+  "464": {
+    "name": "kpasswd",
+    "description": "kpasswd"
+  },
+  "465": {
+    "name": "urd",
+    "description": "URL Rendezvous Directory for SSM"
+  },
+  "466": {
+    "name": "digital-vrc",
+    "description": "digital-vrc"
+  },
+  "467": {
+    "name": "mylex-mapd",
+    "description": "mylex-mapd"
+  },
+  "468": {
+    "name": "photuris",
+    "description": "proturis"
+  },
+  "469": {
+    "name": "rcp",
+    "description": "Radio Control Protocol"
+  },
+  "470": {
+    "name": "scx-proxy",
+    "description": "scx-proxy"
+  },
+  "471": {
+    "name": "mondex",
+    "description": "Mondex"
+  },
+  "472": {
+    "name": "ljk-login",
+    "description": "ljk-login"
+  },
+  "473": {
+    "name": "hybrid-pop",
+    "description": "hybrid-pop"
+  },
+  "474": {
+    "name": "tn-tl-w1",
+    "description": "tn-tl-w1"
+  },
+  "475": {
+    "name": "tcpnethaspsrv",
+    "description": "tcpnethaspsrv"
+  },
+  "476": {
+    "name": "tn-tl-fd1",
+    "description": "tn-tl-fd1"
+  },
+  "477": {
+    "name": "ss7ns",
+    "description": "ss7ns"
+  },
+  "478": {
+    "name": "spsc",
+    "description": "spsc"
+  },
+  "479": {
+    "name": "iafserver",
+    "description": "iafserver"
+  },
+  "480": {
+    "name": "iafdbase",
+    "description": "iafdbase"
+  },
+  "481": {
+    "name": "ph",
+    "description": "Ph service"
+  },
+  "482": {
+    "name": "bgs-nsi",
+    "description": "bgs-nsi"
+  },
+  "483": {
+    "name": "ulpnet",
+    "description": "ulpnet"
+  },
+  "484": {
+    "name": "integra-sme",
+    "description": "Integra Software Management Environment"
+  },
+  "485": {
+    "name": "powerburst",
+    "description": "Air Soft Power Burst"
+  },
+  "486": {
+    "name": "avian",
+    "description": "avian"
+  },
+  "487": {
+    "name": "saft",
+    "description": "saft Simple Asynchronous File Transfer"
+  },
+  "488": {
+    "name": "gss-http",
+    "description": "gss-http"
+  },
+  "489": {
+    "name": "nest-protocol",
+    "description": "nest-protocol"
+  },
+  "490": {
+    "name": "micom-pfs",
+    "description": "micom-pfs"
+  },
+  "491": {
+    "name": "go-login",
+    "description": "go-login"
+  },
+  "492": {
+    "name": "ticf-1",
+    "description": "Transport Independent Convergence for FNA"
+  },
+  "493": {
+    "name": "ticf-2",
+    "description": "Transport Independent Convergence for FNA"
+  },
+  "494": {
+    "name": "pov-ray",
+    "description": "POV-Ray"
+  },
+  "495": {
+    "name": "intecourier",
+    "description": "intecourier"
+  },
+  "496": {
+    "name": "pim-rp-disc",
+    "description": "PIM-RP-DISC"
+  },
+  "497": {
+    "name": "retrospect",
+    "description": "Retrospect backup and restore service"
+  },
+  "498": {
+    "name": "siam",
+    "description": "siam"
+  },
+  "499": {
+    "name": "iso-ill",
+    "description": "ISO ILL Protocol"
+  },
+  "500": {
+    "name": "isakmp",
+    "description": "isakmp"
+  },
+  "501": {
+    "name": "stmf",
+    "description": "STMF"
+  },
+  "502": {
+    "name": "mbap",
+    "description": "Modbus Application Protocol"
+  },
+  "503": {
+    "name": "intrinsa",
+    "description": "Intrinsa"
+  },
+  "504": {
+    "name": "citadel",
+    "description": "citadel"
+  },
+  "505": {
+    "name": "mailbox-lm",
+    "description": "mailbox-lm"
+  },
+  "506": {
+    "name": "ohimsrv",
+    "description": "ohimsrv"
+  },
+  "507": {
+    "name": "crs",
+    "description": "crs"
+  },
+  "508": {
+    "name": "xvttp",
+    "description": "xvttp"
+  },
+  "509": {
+    "name": "snare",
+    "description": "snare"
+  },
+  "510": {
+    "name": "fcp",
+    "description": "FirstClass Protocol"
+  },
+  "511": {
+    "name": "passgo",
+    "description": "PassGo"
+  },
+  "512": {
+    "name": "exec",
+    "description": "remote process execution; authentication performed using passwords and UNIX login names"
+  },
+  "513": {
+    "name": "login",
+    "description": "remote login a la telnet; automatic authentication performed based on priviledged port numbers and distributed data bases which identify \"authentication domains\""
+  },
+  "514": {
+    "name": "shell",
+    "description": "cmd like exec, but automatic authentication is performed as for login server"
+  },
+  "515": {
+    "name": "printer",
+    "description": "spooler"
+  },
+  "516": {
+    "name": "videotex",
+    "description": "videotex"
+  },
+  "517": {
+    "name": "talk",
+    "description": "like tenex link, but across machine - unfortunately, doesn't use link protocol (this is actually just a rendezvous port from which a tcp connection is established)"
+  },
+  "518": {
+    "name": "ntalk"
+  },
+  "519": {
+    "name": "utime",
+    "description": "unixtime"
+  },
+  "520": {
+    "name": "efs",
+    "description": "extended file name server"
+  },
+  "521": {
+    "name": "ripng",
+    "description": "ripng"
+  },
+  "522": {
+    "name": "ulp",
+    "description": "ULP"
+  },
+  "523": {
+    "name": "ibm-db2",
+    "description": "IBM-DB2"
+  },
+  "524": {
+    "name": "ncp",
+    "description": "NCP"
+  },
+  "525": {
+    "name": "timed",
+    "description": "timeserver"
+  },
+  "526": {
+    "name": "tempo",
+    "description": "newdate"
+  },
+  "527": {
+    "name": "stx",
+    "description": "Stock IXChange"
+  },
+  "528": {
+    "name": "custix",
+    "description": "Customer IXChange"
+  },
+  "529": {
+    "name": "irc-serv",
+    "description": "IRC-SERV"
+  },
+  "530": {
+    "name": "courier",
+    "description": "rpc"
+  },
+  "531": {
+    "name": "conference",
+    "description": "chat"
+  },
+  "532": {
+    "name": "netnews",
+    "description": "readnews"
+  },
+  "533": {
+    "name": "netwall",
+    "description": "for emergency broadcasts"
+  },
+  "534": {
+    "name": "windream",
+    "description": "windream Admin"
+  },
+  "535": {
+    "name": "iiop",
+    "description": "iiop"
+  },
+  "536": {
+    "name": "opalis-rdv",
+    "description": "opalis-rdv"
+  },
+  "537": {
+    "name": "nmsp",
+    "description": "Networked Media Streaming Protocol"
+  },
+  "538": {
+    "name": "gdomap",
+    "description": "gdomap"
+  },
+  "539": {
+    "name": "apertus-ldp",
+    "description": "Apertus Technologies Load Determination"
+  },
+  "540": {
+    "name": "uucp",
+    "description": "uucpd"
+  },
+  "541": {
+    "name": "uucp-rlogin",
+    "description": "uucp-rlogin"
+  },
+  "542": {
+    "name": "commerce",
+    "description": "commerce"
+  },
+  "543": {
+    "name": "klogin"
+  },
+  "544": {
+    "name": "kshell",
+    "description": "krcmd"
+  },
+  "545": {
+    "name": "appleqtcsrvr",
+    "description": "appleqtcsrvr"
+  },
+  "546": {
+    "name": "dhcpv6-client",
+    "description": "DHCPv6 Client"
+  },
+  "547": {
+    "name": "dhcpv6-server",
+    "description": "DHCPv6 Server"
+  },
+  "548": {
+    "name": "afpovertcp",
+    "description": "AFP over TCP"
+  },
+  "549": {
+    "name": "idfp",
+    "description": "IDFP"
+  },
+  "550": {
+    "name": "new-rwho",
+    "description": "new-who"
+  },
+  "551": {
+    "name": "cybercash",
+    "description": "cybercash"
+  },
+  "552": {
+    "name": "devshr-nts",
+    "description": "DeviceShare"
+  },
+  "553": {
+    "name": "pirp",
+    "description": "pirp"
+  },
+  "554": {
+    "name": "rtsp",
+    "description": "Real Time Streaming Protocol (RTSP)"
+  },
+  "555": {
+    "name": "dsf"
+  },
+  "556": {
+    "name": "remotefs",
+    "description": "rfs server"
+  },
+  "557": {
+    "name": "openvms-sysipc",
+    "description": "openvms-sysipc"
+  },
+  "558": {
+    "name": "sdnskmp",
+    "description": "SDNSKMP"
+  },
+  "559": {
+    "name": "teedtap",
+    "description": "TEEDTAP"
+  },
+  "560": {
+    "name": "rmonitor",
+    "description": "rmonitord"
+  },
+  "561": {
+    "name": "monitor"
+  },
+  "562": {
+    "name": "chshell",
+    "description": "chcmd"
+  },
+  "563": {
+    "name": "nntps",
+    "description": "nntp protocol over TLS/SSL (was snntp)"
+  },
+  "564": {
+    "name": "9pfs",
+    "description": "plan 9 file service"
+  },
+  "565": {
+    "name": "whoami",
+    "description": "whoami"
+  },
+  "566": {
+    "name": "streettalk",
+    "description": "streettalk"
+  },
+  "567": {
+    "name": "banyan-rpc",
+    "description": "banyan-rpc"
+  },
+  "568": {
+    "name": "ms-shuttle",
+    "description": "microsoft shuttle"
+  },
+  "569": {
+    "name": "ms-rome",
+    "description": "microsoft rome"
+  },
+  "570": {
+    "name": "meter",
+    "description": "demon"
+  },
+  "571": {
+    "name": "meter",
+    "description": "udemon"
+  },
+  "572": {
+    "name": "sonar",
+    "description": "sonar"
+  },
+  "573": {
+    "name": "banyan-vip",
+    "description": "banyan-vip"
+  },
+  "574": {
+    "name": "ftp-agent",
+    "description": "FTP Software Agent System"
+  },
+  "575": {
+    "name": "vemmi",
+    "description": "VEMMI"
+  },
+  "576": {
+    "name": "ipcd",
+    "description": "ipcd"
+  },
+  "577": {
+    "name": "vnas",
+    "description": "vnas"
+  },
+  "578": {
+    "name": "ipdd",
+    "description": "ipdd"
+  },
+  "579": {
+    "name": "decbsrv",
+    "description": "decbsrv"
+  },
+  "580": {
+    "name": "sntp-heartbeat",
+    "description": "SNTP HEARTBEAT"
+  },
+  "581": {
+    "name": "bdp",
+    "description": "Bundle Discovery Protocol"
+  },
+  "582": {
+    "name": "scc-security",
+    "description": "SCC Security"
+  },
+  "583": {
+    "name": "philips-vc",
+    "description": "Philips Video-Conferencing"
+  },
+  "584": {
+    "name": "keyserver",
+    "description": "Key Server"
+  },
+  "586": {
+    "name": "password-chg",
+    "description": "Password Change"
+  },
+  "587": {
+    "name": "submission",
+    "description": "Message Submission"
+  },
+  "588": {
+    "name": "cal",
+    "description": "CAL"
+  },
+  "589": {
+    "name": "eyelink",
+    "description": "EyeLink"
+  },
+  "590": {
+    "name": "tns-cml",
+    "description": "TNS CML"
+  },
+  "591": {
+    "name": "http-alt",
+    "description": "FileMaker, Inc. - HTTP Alternate (see Port 80)"
+  },
+  "592": {
+    "name": "eudora-set",
+    "description": "Eudora Set"
+  },
+  "593": {
+    "name": "http-rpc-epmap",
+    "description": "HTTP RPC Ep Map"
+  },
+  "594": {
+    "name": "tpip",
+    "description": "TPIP"
+  },
+  "595": {
+    "name": "cab-protocol",
+    "description": "CAB Protocol"
+  },
+  "596": {
+    "name": "smsd",
+    "description": "SMSD"
+  },
+  "597": {
+    "name": "ptcnameservice",
+    "description": "PTC Name Service"
+  },
+  "598": {
+    "name": "sco-websrvrmg3",
+    "description": "SCO Web Server Manager 3"
+  },
+  "599": {
+    "name": "acp",
+    "description": "Aeolon Core Protocol"
+  },
+  "600": {
+    "name": "ipcserver",
+    "description": "Sun IPC server"
+  },
+  "601": {
+    "name": "syslog-conn",
+    "description": "Reliable Syslog Service"
+  },
+  "602": {
+    "name": "xmlrpc-beep",
+    "description": "XML-RPC over BEEP"
+  },
+  "603": {
+    "name": "idxp",
+    "description": "IDXP"
+  },
+  "604": {
+    "name": "tunnel",
+    "description": "TUNNEL"
+  },
+  "605": {
+    "name": "soap-beep",
+    "description": "SOAP over BEEP"
+  },
+  "606": {
+    "name": "urm",
+    "description": "Cray Unified Resource Manager"
+  },
+  "607": {
+    "name": "nqs",
+    "description": "nqs"
+  },
+  "608": {
+    "name": "sift-uft",
+    "description": "Sender-Initiated/Unsolicited File Transfer"
+  },
+  "609": {
+    "name": "npmp-trap",
+    "description": "npmp-trap"
+  },
+  "610": {
+    "name": "npmp-local",
+    "description": "npmp-local"
+  },
+  "611": {
+    "name": "npmp-gui",
+    "description": "npmp-gui"
+  },
+  "612": {
+    "name": "hmmp-ind",
+    "description": "HMMP Indication"
+  },
+  "613": {
+    "name": "hmmp-op",
+    "description": "HMMP Operation"
+  },
+  "614": {
+    "name": "sshell",
+    "description": "SSLshell"
+  },
+  "615": {
+    "name": "sco-inetmgr",
+    "description": "Internet Configuration Manager"
+  },
+  "616": {
+    "name": "sco-sysmgr",
+    "description": "SCO System Administration Server"
+  },
+  "617": {
+    "name": "sco-dtmgr",
+    "description": "SCO Desktop Administration Server"
+  },
+  "618": {
+    "name": "dei-icda",
+    "description": "DEI-ICDA"
+  },
+  "619": {
+    "name": "compaq-evm",
+    "description": "Compaq EVM"
+  },
+  "620": {
+    "name": "sco-websrvrmgr",
+    "description": "SCO WebServer Manager"
+  },
+  "621": {
+    "name": "escp-ip",
+    "description": "ESCP"
+  },
+  "622": {
+    "name": "collaborator",
+    "description": "Collaborator"
+  },
+  "623": {
+    "name": "oob-ws-http",
+    "description": "DMTF out-of-band web services management protocol"
+  },
+  "624": {
+    "name": "cryptoadmin",
+    "description": "Crypto Admin"
+  },
+  "625": {
+    "name": "dec-dlm",
+    "description": "DEC DLM IANA assigned this well-formed service name as a replacement for \"dec_dlm\"."
+  },
+  "626": {
+    "name": "asia",
+    "description": "ASIA"
+  },
+  "627": {
+    "name": "passgo-tivoli",
+    "description": "PassGo Tivoli"
+  },
+  "628": {
+    "name": "qmqp",
+    "description": "QMQP"
+  },
+  "629": {
+    "name": "3com-amp3",
+    "description": "3Com AMP3"
+  },
+  "630": {
+    "name": "rda",
+    "description": "RDA"
+  },
+  "631": {
+    "name": "ipp",
+    "description": "IPP (Internet Printing Protocol)"
+  },
+  "632": {
+    "name": "bmpp",
+    "description": "bmpp"
+  },
+  "633": {
+    "name": "servstat",
+    "description": "Service Status update (Sterling Software)"
+  },
+  "634": {
+    "name": "ginad",
+    "description": "ginad"
+  },
+  "635": {
+    "name": "rlzdbase",
+    "description": "RLZ DBase"
+  },
+  "636": {
+    "name": "ldaps",
+    "description": "ldap protocol over TLS/SSL (was sldap)"
+  },
+  "637": {
+    "name": "lanserver",
+    "description": "lanserver"
+  },
+  "638": {
+    "name": "mcns-sec",
+    "description": "mcns-sec"
+  },
+  "639": {
+    "name": "msdp",
+    "description": "MSDP"
+  },
+  "640": {
+    "name": "entrust-sps",
+    "description": "entrust-sps"
+  },
+  "641": {
+    "name": "repcmd",
+    "description": "repcmd"
+  },
+  "642": {
+    "name": "esro-emsdp",
+    "description": "ESRO-EMSDP V1.3"
+  },
+  "643": {
+    "name": "sanity",
+    "description": "SANity"
+  },
+  "644": {
+    "name": "dwr",
+    "description": "dwr"
+  },
+  "645": {
+    "name": "pssc",
+    "description": "PSSC"
+  },
+  "646": {
+    "name": "ldp",
+    "description": "LDP"
+  },
+  "647": {
+    "name": "dhcp-failover",
+    "description": "DHCP Failover"
+  },
+  "648": {
+    "name": "rrp",
+    "description": "Registry Registrar Protocol (RRP)"
+  },
+  "649": {
+    "name": "cadview-3d",
+    "description": "Cadview-3d - streaming 3d models over the internet"
+  },
+  "650": {
+    "name": "obex",
+    "description": "OBEX"
+  },
+  "651": {
+    "name": "ieee-mms",
+    "description": "IEEE MMS"
+  },
+  "652": {
+    "name": "hello-port",
+    "description": "HELLO_PORT"
+  },
+  "653": {
+    "name": "repscmd",
+    "description": "RepCmd"
+  },
+  "654": {
+    "name": "aodv",
+    "description": "AODV"
+  },
+  "655": {
+    "name": "tinc",
+    "description": "TINC"
+  },
+  "656": {
+    "name": "spmp",
+    "description": "SPMP"
+  },
+  "657": {
+    "name": "rmc",
+    "description": "RMC"
+  },
+  "658": {
+    "name": "tenfold",
+    "description": "TenFold"
+  },
+  "660": {
+    "name": "mac-srvr-admin",
+    "description": "MacOS Server Admin"
+  },
+  "661": {
+    "name": "hap",
+    "description": "HAP"
+  },
+  "662": {
+    "name": "pftp",
+    "description": "PFTP"
+  },
+  "663": {
+    "name": "purenoise",
+    "description": "PureNoise"
+  },
+  "664": {
+    "name": "oob-ws-https",
+    "description": "DMTF out-of-band secure web services management protocol"
+  },
+  "665": {
+    "name": "sun-dr",
+    "description": "Sun DR"
+  },
+  "666": {
+    "name": "mdqs"
+  },
+  "667": {
+    "name": "disclose",
+    "description": "campaign contribution disclosures - SDR Technologies"
+  },
+  "668": {
+    "name": "mecomm",
+    "description": "MeComm"
+  },
+  "669": {
+    "name": "meregister",
+    "description": "MeRegister"
+  },
+  "670": {
+    "name": "vacdsm-sws",
+    "description": "VACDSM-SWS"
+  },
+  "671": {
+    "name": "vacdsm-app",
+    "description": "VACDSM-APP"
+  },
+  "672": {
+    "name": "vpps-qua",
+    "description": "VPPS-QUA"
+  },
+  "673": {
+    "name": "cimplex",
+    "description": "CIMPLEX"
+  },
+  "674": {
+    "name": "acap",
+    "description": "ACAP"
+  },
+  "675": {
+    "name": "dctp",
+    "description": "DCTP"
+  },
+  "676": {
+    "name": "vpps-via",
+    "description": "VPPS Via"
+  },
+  "677": {
+    "name": "vpp",
+    "description": "Virtual Presence Protocol"
+  },
+  "678": {
+    "name": "ggf-ncp",
+    "description": "GNU Generation Foundation NCP"
+  },
+  "679": {
+    "name": "mrm",
+    "description": "MRM"
+  },
+  "680": {
+    "name": "entrust-aaas",
+    "description": "entrust-aaas"
+  },
+  "681": {
+    "name": "entrust-aams",
+    "description": "entrust-aams"
+  },
+  "682": {
+    "name": "xfr",
+    "description": "XFR"
+  },
+  "683": {
+    "name": "corba-iiop",
+    "description": "CORBA IIOP"
+  },
+  "684": {
+    "name": "corba-iiop-ssl",
+    "description": "CORBA IIOP SSL"
+  },
+  "685": {
+    "name": "mdc-portmapper",
+    "description": "MDC Port Mapper"
+  },
+  "686": {
+    "name": "hcp-wismar",
+    "description": "Hardware Control Protocol Wismar"
+  },
+  "687": {
+    "name": "asipregistry",
+    "description": "asipregistry"
+  },
+  "688": {
+    "name": "realm-rusd",
+    "description": "ApplianceWare managment protocol"
+  },
+  "689": {
+    "name": "nmap",
+    "description": "NMAP"
+  },
+  "690": {
+    "name": "vatp",
+    "description": "Velneo Application Transfer Protocol"
+  },
+  "691": {
+    "name": "msexch-routing",
+    "description": "MS Exchange Routing"
+  },
+  "692": {
+    "name": "hyperwave-isp",
+    "description": "Hyperwave-ISP"
+  },
+  "693": {
+    "name": "connendp",
+    "description": "almanid Connection Endpoint"
+  },
+  "694": {
+    "name": "ha-cluster",
+    "description": "ha-cluster"
+  },
+  "695": {
+    "name": "ieee-mms-ssl",
+    "description": "IEEE-MMS-SSL"
+  },
+  "696": {
+    "name": "rushd",
+    "description": "RUSHD"
+  },
+  "697": {
+    "name": "uuidgen",
+    "description": "UUIDGEN"
+  },
+  "698": {
+    "name": "olsr",
+    "description": "OLSR"
+  },
+  "699": {
+    "name": "accessnetwork",
+    "description": "Access Network"
+  },
+  "700": {
+    "name": "epp",
+    "description": "Extensible Provisioning Protocol"
+  },
+  "701": {
+    "name": "lmp",
+    "description": "Link Management Protocol (LMP)"
+  },
+  "702": {
+    "name": "iris-beep",
+    "description": "IRIS over BEEP"
+  },
+  "704": {
+    "name": "elcsd",
+    "description": "errlog copy/server daemon"
+  },
+  "705": {
+    "name": "agentx",
+    "description": "AgentX"
+  },
+  "706": {
+    "name": "silc",
+    "description": "SILC"
+  },
+  "707": {
+    "name": "borland-dsj",
+    "description": "Borland DSJ"
+  },
+  "709": {
+    "name": "entrust-kmsh",
+    "description": "Entrust Key Management Service Handler"
+  },
+  "710": {
+    "name": "entrust-ash",
+    "description": "Entrust Administration Service Handler"
+  },
+  "711": {
+    "name": "cisco-tdp",
+    "description": "Cisco TDP"
+  },
+  "712": {
+    "name": "tbrpf",
+    "description": "TBRPF"
+  },
+  "713": {
+    "name": "iris-xpc",
+    "description": "IRIS over XPC"
+  },
+  "714": {
+    "name": "iris-xpcs",
+    "description": "IRIS over XPCS"
+  },
+  "715": {
+    "name": "iris-lwz",
+    "description": "IRIS-LWZ"
+  },
+  "729": {
+    "name": "netviewdm1",
+    "description": "IBM NetView DM/6000 Server/Client"
+  },
+  "730": {
+    "name": "netviewdm2",
+    "description": "IBM NetView DM/6000 send"
+  },
+  "731": {
+    "name": "netviewdm3",
+    "description": "IBM NetView DM/6000 receive"
+  },
+  "741": {
+    "name": "netgw",
+    "description": "netGW"
+  },
+  "742": {
+    "name": "netrcs",
+    "description": "Network based Rev. Cont. Sys."
+  },
+  "744": {
+    "name": "flexlm",
+    "description": "Flexible License Manager"
+  },
+  "747": {
+    "name": "fujitsu-dev",
+    "description": "Fujitsu Device Control"
+  },
+  "748": {
+    "name": "ris-cm",
+    "description": "Russell Info Sci Calendar Manager"
+  },
+  "749": {
+    "name": "kerberos-adm",
+    "description": "kerberos administration"
+  },
+  "750": {
+    "name": "rfile"
+  },
+  "751": {
+    "name": "pump"
+  },
+  "752": {
+    "name": "qrh"
+  },
+  "753": {
+    "name": "rrh"
+  },
+  "754": {
+    "name": "tell",
+    "description": "send"
+  },
+  "758": {
+    "name": "nlogin"
+  },
+  "759": {
+    "name": "con"
+  },
+  "760": {
+    "name": "ns"
+  },
+  "761": {
+    "name": "rxe"
+  },
+  "762": {
+    "name": "quotad"
+  },
+  "763": {
+    "name": "cycleserv"
+  },
+  "764": {
+    "name": "omserv"
+  },
+  "765": {
+    "name": "webster"
+  },
+  "767": {
+    "name": "phonebook",
+    "description": "phone"
+  },
+  "769": {
+    "name": "vid"
+  },
+  "770": {
+    "name": "cadlock"
+  },
+  "771": {
+    "name": "rtip"
+  },
+  "772": {
+    "name": "cycleserv2"
+  },
+  "773": {
+    "name": "submit"
+  },
+  "774": {
+    "name": "rpasswd"
+  },
+  "775": {
+    "name": "entomb"
+  },
+  "776": {
+    "name": "wpages"
+  },
+  "777": {
+    "name": "multiling-http",
+    "description": "Multiling HTTP"
+  },
+  "780": {
+    "name": "wpgs"
+  },
+  "800": {
+    "name": "mdbs-daemon",
+    "description": "IANA assigned this well-formed service name as a replacement for \"mdbs_daemon\"."
+  },
+  "801": {
+    "name": "device"
+  },
+  "802": {
+    "name": "mbap-s",
+    "description": "Modbus Application Protocol Secure"
+  },
+  "810": {
+    "name": "fcp-udp",
+    "description": "FCP"
+  },
+  "828": {
+    "name": "itm-mcell-s",
+    "description": "itm-mcell-s"
+  },
+  "829": {
+    "name": "pkix-3-ca-ra",
+    "description": "PKIX-3 CA/RA"
+  },
+  "830": {
+    "name": "netconf-ssh",
+    "description": "NETCONF over SSH"
+  },
+  "831": {
+    "name": "netconf-beep",
+    "description": "NETCONF over BEEP"
+  },
+  "832": {
+    "name": "netconfsoaphttp",
+    "description": "NETCONF for SOAP over HTTPS"
+  },
+  "833": {
+    "name": "netconfsoapbeep",
+    "description": "NETCONF for SOAP over BEEP"
+  },
+  "847": {
+    "name": "dhcp-failover2",
+    "description": "dhcp-failover 2"
+  },
+  "848": {
+    "name": "gdoi",
+    "description": "GDOI"
+  },
+  "853": {
+    "name": "domain-s",
+    "description": "DNS query-response protocol run over TLS/DTLS"
+  },
+  "854": {
+    "name": "dlep",
+    "description": "Dynamic Link Exchange Protocol (DLEP)"
+  },
+  "860": {
+    "name": "iscsi",
+    "description": "iSCSI"
+  },
+  "861": {
+    "name": "owamp-control",
+    "description": "OWAMP-Control"
+  },
+  "862": {
+    "name": "twamp-control",
+    "description": "TWAMP-Control"
+  },
+  "873": {
+    "name": "rsync",
+    "description": "rsync"
+  },
+  "886": {
+    "name": "iclcnet-locate",
+    "description": "ICL coNETion locate server"
+  },
+  "887": {
+    "name": "iclcnet-svinfo",
+    "description": "ICL coNETion server info IANA assigned this well-formed service name as a replacement for \"iclcnet_svinfo\"."
+  },
+  "888": {
+    "name": "accessbuilder",
+    "description": "AccessBuilder"
+  },
+  "900": {
+    "name": "omginitialrefs",
+    "description": "OMG Initial Refs"
+  },
+  "901": {
+    "name": "smpnameres",
+    "description": "SMPNAMERES"
+  },
+  "902": {
+    "name": "ideafarm-door",
+    "description": "self documenting Telnet Door"
+  },
+  "903": {
+    "name": "ideafarm-panic",
+    "description": "self documenting Telnet Panic Door"
+  },
+  "910": {
+    "name": "kink",
+    "description": "Kerberized Internet Negotiation of Keys (KINK)"
+  },
+  "911": {
+    "name": "xact-backup",
+    "description": "xact-backup"
+  },
+  "912": {
+    "name": "apex-mesh",
+    "description": "APEX relay-relay service"
+  },
+  "913": {
+    "name": "apex-edge",
+    "description": "APEX endpoint-relay service"
+  },
+  "953": {
+    "name": "rndc",
+    "description": "BIND9 remote name daemon controller"
+  },
+  "989": {
+    "name": "ftps-data",
+    "description": "ftp protocol, data, over TLS/SSL"
+  },
+  "990": {
+    "name": "ftps",
+    "description": "ftp protocol, control, over TLS/SSL"
+  },
+  "991": {
+    "name": "nas",
+    "description": "Netnews Administration System"
+  },
+  "992": {
+    "name": "telnets",
+    "description": "telnet protocol over TLS/SSL"
+  },
+  "993": {
+    "name": "imaps",
+    "description": "IMAP over TLS protocol"
+  },
+  "994": {
+    "name": "",
+    "description": "Reserved"
+  },
+  "995": {
+    "name": "pop3s",
+    "description": "POP3 over TLS protocol"
+  },
+  "996": {
+    "name": "vsinet",
+    "description": "vsinet"
+  },
+  "997": {
+    "name": "maitrd"
+  },
+  "998": {
+    "name": "busboy"
+  },
+  "999": {
+    "name": "garcon"
+  },
+  "1000": {
+    "name": "cadlock2"
+  }
+}

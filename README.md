@@ -212,8 +212,8 @@ Vous pouvez ensuite accéder à la documentation en ouvrant le fichier `docs/_bu
     - Environnement Docker complet pour les tests ✅ 
 
 - Quatrième jalon (20/04/2023) :
-    - PoC complet
-    - Documentation de run complète
+    - PoC complet ✅ 
+    - Documentation de run complète ✅ 
 
 # Contributeurs
 
